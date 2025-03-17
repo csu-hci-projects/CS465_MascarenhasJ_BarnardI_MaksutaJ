@@ -2,6 +2,5 @@
 
 # Checkpoint 1
 ## Deliverables:
-- [PDF File]([CS465_801_Checkpoint1.pdf](https://github.com/user-attachments/files/19294397/CS465_801_Checkpoint1.pdf)
-)
+- [PDF File]()
 - [readme.txt](readme.txt)
