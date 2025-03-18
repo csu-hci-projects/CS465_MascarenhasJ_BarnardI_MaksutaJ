@@ -6,7 +6,7 @@ Overleaf Edit Link: https://www.overleaf.com/4948194659qdxxbsmvtwqr#4506df
 
 Main Videos:
   Current Progress:
-                    https://youtu.be/9DVnuBo91rk
+                    https://youtu.be/8yfUizN2EV0
   Current Code:
                        
 
