@@ -50,7 +50,9 @@ public class SymbolTracer : MonoBehaviour
                     Vector3 currentPosition = GetInputPosition();
                     tracedPathSolo.Add(currentPosition);
                 }
+                CleanupPaths(); 
             }
+            
             ShowDebugText();
         }
     }
@@ -90,6 +92,29 @@ public class SymbolTracer : MonoBehaviour
             Debug.LogError("Input source is not set.");
         }
         return result;
+    }
+
+    private void CleanupPaths()
+    {
+        if (inputSource.GetNumberOfInputs() > 1)
+        {
+            if (tracedPathLeft.Count > 5)
+            {
+                tracedPathLeft.RemoveRange(0, tracedPathLeft.Count - 5);    
+            }
+            if (tracedPathRight.Count > 5)
+            {
+                tracedPathRight.RemoveRange(0, tracedPathRight.Count - 5);
+            }
+
+        }
+        else if (inputSource.GetNumberOfInputs() == 1)
+        {
+            if (tracedPathSolo.Count > 5)
+            {
+                tracedPathSolo.RemoveRange(0, tracedPathSolo.Count - 5);
+            }
+        }
     }
 
     private void ShowDebugText()

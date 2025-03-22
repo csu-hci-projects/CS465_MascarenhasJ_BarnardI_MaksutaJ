@@ -4,7 +4,7 @@ using UnityEngine;
 public class DebugTextDisplay : MonoBehaviour
 {
     public TMP_Text debugText; // Reference to the TextMeshProUGUI component    
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +22,10 @@ public class DebugTextDisplay : MonoBehaviour
     void Update()
     {
         float currentTime = Time.time;
-        UpdateDebugText("Time:" + currentTime.ToString("F2") + " s");
+        if (debugText != null && string.IsNullOrEmpty(debugText.text))
+        {
+            UpdateDebugText("Time:" + currentTime.ToString("F2") + " s");
+        }
     }
 
     public void UpdateDebugText(string debugText)
