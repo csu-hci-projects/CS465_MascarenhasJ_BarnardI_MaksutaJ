@@ -17,8 +17,11 @@ public class GestureRecognizer : MonoBehaviour
         // Check if a gesture is recognized
         if (IsGestureRecognized())
         {
-            // Perform the action associated with the recognized gesture
-            recognizedGesture.Value.Invoke();
+            if (((object)recognizedGesture) != null)
+            {
+                // Perform the action associated with the recognized gesture
+                recognizedGesture.Value.Invoke();
+            }
         }
     }
 

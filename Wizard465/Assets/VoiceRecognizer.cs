@@ -1,5 +1,7 @@
+using Assets;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 
@@ -23,23 +25,46 @@ public class VoiceRecognizer : MonoBehaviour
 
     private KeyValuePair<string, System.Action> recognizedPhrase;
 
+    private MonoBehaviour currentBehavior; // Store the active behavior
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Populate the dictionary of actions
-        keywordActions.Add("fireball", SpawnFireball);
-        keywordActions.Add("smoke puff", SpawnSmokePuff);
-
-        // Initialize the keyword recognizer
-        keywordRecognizer = new KeywordRecognizer(keywords, confidence);
-        keywordRecognizer.OnPhraseRecognized += OnPhraseRecognized;
-        keywordRecognizer.Start();
+#if UNITY_STANDALONE_WIN
+        currentBehavior = gameObject.AddComponent<DotNetVoiceRecognizer>();
+#elif UNITY_STANDALONE_OSX
+        currentBehavior = gameObject.AddComponent<OpenXRVoiceRecognizer>();
+#elif UNITY_STANDALONE_LINUX
+        currentBehavior = gameObject.AddComponent<OpenXRVoiceRecognizer>();
+#else
+        Debug.LogWarning("Unsupported platform.");
+#endif
     }
 
     // Update is called once per frame
     void Update()
     {
-
+#if UNITY_STANDALONE_WIN
+            if (currentBehavior != null)
+            {
+                currentBehavior.Update();   
+                Debug.Log("Windows Update");
+            }
+#elif UNITY_STANDALONE_OSX
+            if (currentBehavior != null)
+            {
+                currentBehavior.Update();
+                Debug.Log("Mac Update");
+            }
+#elif UNITY_STANDALONE_LINUX
+            if (currentBehavior != null)
+            {
+                currentBehavior.Update();
+                Debug.Log("Linux Update");
+            }
+#else
+        // Optional: Handle unsupported platforms in Update.
+#endif
     }
 
     void OnPhraseRecognized(PhraseRecognizedEventArgs args)
