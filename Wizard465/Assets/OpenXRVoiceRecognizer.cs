@@ -58,7 +58,7 @@ public class OpenXRVoiceRecognizer : MonoBehaviour
     }
 #endif
 
-    void SpawnFireball()
+    public void SpawnFireball()
     {
         if (fireballPrefab != null && spawnPoint != null)
         {
@@ -70,7 +70,7 @@ public class OpenXRVoiceRecognizer : MonoBehaviour
         }
     }
 
-    void SpawnSmokePuff()
+    public void SpawnSmokePuff()
     {
         if (smokePuffPrefab != null && spawnPoint != null)
         {
