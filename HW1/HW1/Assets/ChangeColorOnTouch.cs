@@ -15,6 +15,7 @@ public class ChangeColorOnTouch : MonoBehaviour
         interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable>();
 
         if (interactable != null)
+        
         {
             interactable.hoverEntered.AddListener(ChangeToWhite);
             interactable.hoverExited.AddListener(ResetColor);
