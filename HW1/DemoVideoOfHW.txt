@@ -1,5 +1,19 @@
 a. YouTube Video Link:
 https://youtu.be/5d_Dd8e7pyw
 b. Task Allocation:
-...
 
+GitHub: 
+
+For this assignment, we tracked our issues in GitHub to keep track of what needed to be done. 
+
+https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ 
+
+On March 17th, we had a 30-minute meeting to discuss the state of our team and changes that had been made. In our team, we discussed the task allocation first in the Teams chat, and we were able to list all the tasks that needed to be done. In between meetings, we spoke frequently on teams about Task Allocation and began prepping for the assignment. On Wednesday March 26th, we held a meeting to discuss the progress we had made on the tasks and how we wanted to tackle them. This meeting was over an hour long. Due to issues with Mac, some changes had to be made in terms of who was testing the assignment. Originally, some of the tasks were allocated differently and so we needed to modify who was doing what. The result of these modifications are as follows:  
+
+John’s Tasks: Red Block and Thumbs-Up Gesture 
+
+Jaden’s Tasks: Platform Creation and Yellow Block 
+
+Isabella’s Tasks: Blue Block and Fist Gesture 
+
+In terms of the final submission, John created our demo video, Jaden and John both helped with testing and finishing touches, and Isabella worked on the write up.  
