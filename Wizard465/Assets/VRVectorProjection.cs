@@ -17,7 +17,24 @@ public class VRVectorProjection : MonoBehaviour
 
     }
 
-    public static List<Vector2> ProjectVector3PathToVector2(List<Vector3> vector3Path, Camera mainCamera)
+    public List<Vector2> vector3PathToVector2ByPerspectiveDivide(List<Vector3> vector3Path)
+    {
+        List<Vector2> result = new List<Vector2>();
+
+        foreach (Vector3 vector3 in vector3Path)
+        {
+            result.Add(new Vector2(vector3.x / vector3.z, vector3.y / vector3.z));
+        }
+
+        return result;
+    }
+
+    public List<Vector2> ProjectVector3PathToVector2(List<Vector3> vector3Path)
+    {
+        return ProjectVector3PathToVector2(vector3Path, mainCamera);
+    }
+
+    public List<Vector2> ProjectVector3PathToVector2(List<Vector3> vector3Path, Camera mainCamera)
     {
         List<Vector2> result = new List<Vector2>();
         if (mainCamera == null)
@@ -35,7 +52,12 @@ public class VRVectorProjection : MonoBehaviour
         return result;
     }
 
-    public static List<Vector2> ProjectVector3PathToViewport(List<Vector3> vector3Path, Camera mainCamera)
+    public List<Vector2> ProjectVector3PathToViewport(List<Vector3> vector3Path)
+    {
+        return ProjectVector3PathToViewport(vector3Path, mainCamera);
+    }
+
+    public List<Vector2> ProjectVector3PathToViewport(List<Vector3> vector3Path, Camera mainCamera)
     {
         List<Vector2> result = new List<Vector2>();
         if (mainCamera == null)
@@ -47,6 +69,7 @@ public class VRVectorProjection : MonoBehaviour
         foreach (Vector3 vector3 in vector3Path)
         {
             Vector3 viewportPoint = mainCamera.WorldToViewportPoint(vector3);
+            //result.Add(new Vector2(viewportPoint.x / viewportPoint.z, viewportPoint.y / viewportPoint.z));
             result.Add(new Vector2(viewportPoint.x, viewportPoint.y));
         }
 
