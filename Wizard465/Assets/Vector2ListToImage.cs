@@ -113,8 +113,11 @@ namespace Assets
             {
                 Debug.Log(vector2);
 
-                float x = (vector2.x + 1f) * 0.5f * textureWidth;
-                float y = (vector2.y + 1f) * 0.5f * textureHeight;
+                //float x = (vector2.x + 1f) * 0.5f * textureWidth;
+                //float y = (vector2.y + 1f) * 0.5f * textureHeight;
+
+                float x = (vector2.x + 0.5f) * 0.5f * textureWidth;
+                float y = (vector2.y + 0.5f) * 0.5f * textureHeight;
 
                 int pixelX = Mathf.Clamp(Mathf.RoundToInt(x), 0, textureWidth - 1);
                 int pixelY = Mathf.Clamp(Mathf.RoundToInt(y), 0, textureHeight - 1);
@@ -123,15 +126,18 @@ namespace Assets
 
                 Debug.Log($"Pixel X: {pixelX}, Pixel Y: {pixelY}");
 
-                pixels[pixelY * textureWidth + pixelX] = Color.white;
+                pixels[pixelY * textureWidth + pixelX] = Color.blue;
             }
             List<Vector2Int> pixelPointsRight = new List<Vector2Int>();
             foreach (Vector2 vector2 in vector2ListRight)
             {
                 Debug.Log(vector2);
 
-                float x = (vector2.x + 1f) * 0.5f * textureWidth;
-                float y = (vector2.y + 1f) * 0.5f * textureHeight;
+                //float x = (vector2.x + 1f) * 0.5f * textureWidth;
+                //float y = (vector2.y + 1f) * 0.5f * textureHeight;
+
+                float x = (vector2.x + 0.5f) * 0.5f * textureWidth;
+                float y = (vector2.y + 0.5f) * 0.5f * textureHeight;
 
                 int pixelX = Mathf.Clamp(Mathf.RoundToInt(x), 0, textureWidth - 1);
                 int pixelY = Mathf.Clamp(Mathf.RoundToInt(y), 0, textureHeight - 1);
@@ -140,7 +146,7 @@ namespace Assets
 
                 Debug.Log($"Pixel X: {pixelX}, Pixel Y: {pixelY}");
 
-                pixels[pixelY * textureWidth + pixelX] = Color.white;
+                pixels[pixelY * textureWidth + pixelX] = Color.red;
             }
 
 
