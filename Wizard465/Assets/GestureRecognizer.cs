@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class GestureRecognizer : MonoBehaviour
 {
-    private KeyValuePair<string, System.Action> recognizedGesture;
+    private string recognizedGesture;
+
+    private bool _gestureRecognized = false;
+    private string _lastRecognizedGesture = string.Empty;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,24 +17,28 @@ public class GestureRecognizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if a gesture is recognized
-        if (IsGestureRecognized())
-        {
-            if (((object)recognizedGesture) != null)
-            {
-                // Perform the action associated with the recognized gesture
-                recognizedGesture.Value.Invoke();
-            }
-        }
+
     }
 
+    public void OnGestureRecognized(string recognizedGesture)
+    {
+        if (string.IsNullOrEmpty(recognizedGesture))
+        {
+            Debug.LogWarning("No recognized text provided.");
+            return;
+        }
+
+        this.recognizedGesture = recognizedGesture; // Update the recognized phrase
+
+        Debug.Log("OnVoiceRecognized called with: " + recognizedGesture);
+    }
 
     internal bool IsGestureRecognized()
     {
         return (true);
     }
 
-    internal KeyValuePair<string, System.Action> GetRecognizedGesture()
+    internal string GetRecognizedGesture()
     {
         return recognizedGesture;
     }

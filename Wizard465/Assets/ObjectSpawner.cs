@@ -9,9 +9,9 @@ namespace Assets
 {
     public class ObjectSpawner : MonoBehaviour
     {
-        Transform spawnPoint;
+        public Transform spawnPoint;
 
-        GameObject objectToSpawn;
+        public GameObject objectToSpawn;
         
         public void SpawnObject()
         {
