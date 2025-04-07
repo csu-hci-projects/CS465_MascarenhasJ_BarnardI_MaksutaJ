@@ -35,7 +35,8 @@ public class VoiceRecognizer : MonoBehaviour
         }
 
         this.recognizedPhrase = recognizedText; // Update the recognized phrase
-        
+        this._lastRecognizedPhrase = recognizedText;
+
         Debug.Log("OnVoiceRecognized called with: " + recognizedText);
     }
 
@@ -47,5 +48,11 @@ public class VoiceRecognizer : MonoBehaviour
     internal string GetRecognizedPhrase()
     {
         return recognizedPhrase;
+    }
+
+    public void Reset()
+    {
+        this.recognizedPhrase = string.Empty;
+        this._voiceRecognized = false;
     }
 }

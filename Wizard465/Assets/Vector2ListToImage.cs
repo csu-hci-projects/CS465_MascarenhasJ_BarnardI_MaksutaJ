@@ -219,121 +219,121 @@ namespace Assets
             targetImage.sprite = Sprite.Create(texture, new Rect(0, 0, textureWidth, textureHeight), Vector2.one * 0.5f);
         }
 
-        private void DrawLine(Texture2D texture, Vector2Int p1, Vector2Int p2, Color color)
-        {
-            float deltaY = p2.y - p1.y;
-            float deltaX = p2.x - p1.x;
-
-            float slope = deltaY / (deltaX == 0 ? 0 : deltaX);
-
-            Vector2Int vSlope = new Vector2Int((int)deltaX, (int)deltaY); // Initialize slope vector for line drawing   
-
-
-            int px = p1.x; // Start from the first point    
-            int py = p1.y; // Start from the first point    
-
-            Vector2Int currentPoint = new Vector2Int();
-
-            do
-            {
-                currentPoint = new Vector2Int(px, py); // Update the current point based on px and py
-
-                Vector2Int lastPoint = new Vector2Int(currentPoint.x, currentPoint.y);
-
-                // line = y = mx + b; where m is slope and b is y-intercept. We can use slope to find the next point in the line.
-                if (p1.x < p2.x)
-                {
-                    currentPoint += new Vector2Int(1, 0);
-                    currentPoint.y = (int)(p1.y + slope * (currentPoint.x - p1.x)); // Calculate the y value based on the slope and current x position. This is to ensure we follow the slope of the line.
-                }
-                else if (p1.x > p2.x)
-                {
-                    currentPoint += new Vector2Int(-1, 0);
-                    currentPoint.y = (int)(p1.y + slope * (currentPoint.x - p1.x)); // Calculate the y value based on the slope and current x position. This is to ensure we follow the slope of the line.
-                }
-                else if (p1.x == p2.x)
-                {
-                    // TODO: y-scale crawl
-                    if (p1.y < p2.y)
-                    {
-                        currentPoint += new Vector2Int(0, 1);
-                    }
-                    else if (p1.y > p2.y)
-                    {
-                        currentPoint += new Vector2Int(0, -1);
-                    }
-                }
-
-                bool isFinishedX = false;
-                bool isFinishedY = false;
-                if (p1.x < p2.x && currentPoint.x >= p2.x) // If we have reached or passed the end point in x direction, set to end point and break
-                {
-                    isFinishedX = true;
-                }
-                else if (p1.x >= p2.x && currentPoint.x <= p2.x)
-                {
-                    isFinishedX = true; // We have reached or passed the end point in x direction, set to end point and break   
-                }
-                if (p1.y < p2.y && currentPoint.y >= p2.y) // If we have reached or passed the end point in y direction, set to end point and break
-                {
-                    isFinishedY = true;
-                }
-                else if (p1.y >= p2.y && currentPoint.y <= p2.y)
-                {
-                    isFinishedY = true; // We have reached or passed the end point in y direction, set to end point and break   
-                }
-                if (isFinishedX && isFinishedY)
-                {
-                    break; // Break the loop if we have reached the end point in both x and y directions
-                }
-                else
-                {
-                    texture.SetPixel(currentPoint.x, currentPoint.y, color);
-                }
-            }
-            while (true);
-
-            texture.Apply(); // Apply the changes to the texture.
-
-        }
-
         //private void DrawLine(Texture2D texture, Vector2Int p1, Vector2Int p2, Color color)
         //{
-        //    // Bresenham's Line Algorithm implementation
-        //    int x0 = p1.x;
-        //    int y0 = p1.y;
-        //    int x1 = p2.x;
-        //    int y1 = p2.y;
+        //    float deltaY = p2.y - p1.y;
+        //    float deltaX = p2.x - p1.x;
 
-        //    int dx = Mathf.Abs(x1 - x0);
-        //    int dy = Mathf.Abs(y1 - y0);
-        //    int sx = x0 < x1 ? 1 : -1;
-        //    int sy = y0 < y1 ? 1 : -1;
-        //    int err = dx - dy;
+        //    float slope = deltaY / (deltaX == 0 ? 0 : deltaX);
 
-        //    while (true)
+        //    Vector2Int vSlope = new Vector2Int((int)deltaX, (int)deltaY); // Initialize slope vector for line drawing   
+
+
+        //    int px = p1.x; // Start from the first point    
+        //    int py = p1.y; // Start from the first point    
+
+        //    Vector2Int currentPoint = new Vector2Int();
+
+        //    do
         //    {
-        //        if (x0 >= 0 && x0 < texture.width && y0 >= 0 && y0 < texture.height)
+        //        currentPoint = new Vector2Int(px, py); // Update the current point based on px and py
+
+        //        Vector2Int lastPoint = new Vector2Int(currentPoint.x, currentPoint.y);
+
+        //        // line = y = mx + b; where m is slope and b is y-intercept. We can use slope to find the next point in the line.
+        //        if (p1.x < p2.x)
         //        {
-        //            texture.SetPixel(x0, y0, color);
+        //            currentPoint += new Vector2Int(1, 0);
+        //            currentPoint.y = (int)(p1.y + slope * (currentPoint.x - p1.x)); // Calculate the y value based on the slope and current x position. This is to ensure we follow the slope of the line.
+        //        }
+        //        else if (p1.x > p2.x)
+        //        {
+        //            currentPoint += new Vector2Int(-1, 0);
+        //            currentPoint.y = (int)(p1.y + slope * (currentPoint.x - p1.x)); // Calculate the y value based on the slope and current x position. This is to ensure we follow the slope of the line.
+        //        }
+        //        else if (p1.x == p2.x)
+        //        {
+        //            // TODO: y-scale crawl
+        //            if (p1.y < p2.y)
+        //            {
+        //                currentPoint += new Vector2Int(0, 1);
+        //            }
+        //            else if (p1.y > p2.y)
+        //            {
+        //                currentPoint += new Vector2Int(0, -1);
+        //            }
         //        }
 
-        //        if (x0 == x1 && y0 == y1) break;
-        //        int e2 = 2 * err;
-        //        if (e2 > -dy)
+        //        bool isFinishedX = false;
+        //        bool isFinishedY = false;
+        //        if (p1.x < p2.x && currentPoint.x >= p2.x) // If we have reached or passed the end point in x direction, set to end point and break
         //        {
-        //            err -= dy;
-        //            x0 += sx;
+        //            isFinishedX = true;
         //        }
-        //        if (e2 < dx)
+        //        else if (p1.x >= p2.x && currentPoint.x <= p2.x)
         //        {
-        //            err += dx;
-        //            y0 += sy;
+        //            isFinishedX = true; // We have reached or passed the end point in x direction, set to end point and break   
+        //        }
+        //        if (p1.y < p2.y && currentPoint.y >= p2.y) // If we have reached or passed the end point in y direction, set to end point and break
+        //        {
+        //            isFinishedY = true;
+        //        }
+        //        else if (p1.y >= p2.y && currentPoint.y <= p2.y)
+        //        {
+        //            isFinishedY = true; // We have reached or passed the end point in y direction, set to end point and break   
+        //        }
+        //        if (isFinishedX && isFinishedY)
+        //        {
+        //            break; // Break the loop if we have reached the end point in both x and y directions
+        //        }
+        //        else
+        //        {
+        //            texture.SetPixel(currentPoint.x, currentPoint.y, color);
         //        }
         //    }
+        //    while (true);
 
         //    texture.Apply(); // Apply the changes to the texture.
+
         //}
+
+        private void DrawLine(Texture2D texture, Vector2Int p1, Vector2Int p2, Color color)
+        {
+            // Bresenham's Line Algorithm implementation
+            int x0 = p1.x;
+            int y0 = p1.y;
+            int x1 = p2.x;
+            int y1 = p2.y;
+
+            int dx = Mathf.Abs(x1 - x0);
+            int dy = Mathf.Abs(y1 - y0);
+            int sx = x0 < x1 ? 1 : -1;
+            int sy = y0 < y1 ? 1 : -1;
+            int err = dx - dy;
+
+            while (true)
+            {
+                if (x0 >= 0 && x0 < texture.width && y0 >= 0 && y0 < texture.height)
+                {
+                    texture.SetPixel(x0, y0, color);
+                }
+
+                if (x0 == x1 && y0 == y1) break;
+                int e2 = 2 * err;
+                if (e2 > -dy)
+                {
+                    err -= dy;
+                    x0 += sx;
+                }
+                if (e2 < dx)
+                {
+                    err += dx;
+                    y0 += sy;
+                }
+            }
+
+            texture.Apply(); // Apply the changes to the texture.
+        }
 
         //private void DrawLine(Texture2D texture, Vector2Int p1, Vector2Int p2, Color color)
         //{

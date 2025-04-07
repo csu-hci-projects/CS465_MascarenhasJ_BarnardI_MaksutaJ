@@ -29,6 +29,7 @@ public class GestureRecognizer : MonoBehaviour
         }
 
         this.recognizedGesture = recognizedGesture; // Update the recognized phrase
+        this._lastRecognizedGesture = recognizedGesture; // Store the last recognized gesture
 
         Debug.Log("OnVoiceRecognized called with: " + recognizedGesture);
     }
@@ -41,5 +42,11 @@ public class GestureRecognizer : MonoBehaviour
     internal string GetRecognizedGesture()
     {
         return "fireball"; // TODO: recognizedGesture;
+    }
+
+    public void Reset()
+    {
+        this.recognizedGesture = string.Empty;
+        this._gestureRecognized = false;
     }
 }
