@@ -40,6 +40,6 @@ public class GestureRecognizer : MonoBehaviour
 
     internal string GetRecognizedGesture()
     {
-        return recognizedGesture;
+        return "fireball"; // TODO: recognizedGesture;
     }
 }
