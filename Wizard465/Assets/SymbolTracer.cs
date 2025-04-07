@@ -25,6 +25,10 @@ public class SymbolTracer : MonoBehaviour
     public VRVectorProjection vRVectorProjection;
     public Vector2ListToImage vector2ListToImage;
 
+    public GestureRecognizer gestureRecognizer;
+    public SpellLibrary shapeLibrary;
+
+
     public int MaxVectorListSize;
     public TMP_Text debugText;
 
@@ -99,6 +103,8 @@ public class SymbolTracer : MonoBehaviour
                 vRVectorProjection.ProjectVector3PathToViewport(tracedPathRight);
                 //vRVectorProjection.vector3PathToVector2ByPerspectiveDivide(tracedPathRight);
 
+                SpellDefinition leftMatch = SearchLibraryForMatch(flatPathLeft);
+                SpellDefinition rightMatch = SearchLibraryForMatch(flatPathRight);   
 
                 if (vector2ListToImage != null)
                 {
@@ -113,12 +119,36 @@ public class SymbolTracer : MonoBehaviour
 
                 List<Vector2> flatPathSolo = vRVectorProjection.ProjectVector3PathToVector2(tracedPathSolo, vRVectorProjection.mainCamera);
 
+                SpellDefinition soloMatch = SearchLibraryForMatch(flatPathSolo);    
+
                 if (vector2ListToImage != null)
                 {
                     vector2ListToImage.DrawVector2List(flatPathSolo);
                 }
             }
 
+        }
+    }
+
+    private SpellDefinition SearchLibraryForMatch(List<Vector2> flatPath)
+    {
+        SpellDefinition result = null;
+        if (shapeLibrary != null)
+        {
+            result = this.shapeLibrary.Search(flatPath);
+        }
+        else
+        {
+            Debug.LogError("Shape library is not set.");
+        }
+        return result;
+    }
+
+    private void checkMatch(SpellDefinition match)
+    {
+        if (match != null)
+        {
+            this.gestureRecognizer.OnGestureRecognized(match.Name);
         }
     }
 

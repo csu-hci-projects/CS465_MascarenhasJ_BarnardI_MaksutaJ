@@ -16,8 +16,6 @@ public class TaskRecognizer : MonoBehaviour
 
     private DateTime watchTime = DateTime.MinValue;
 
-
-
     [Serializable]
     public class EventPairs
     {
