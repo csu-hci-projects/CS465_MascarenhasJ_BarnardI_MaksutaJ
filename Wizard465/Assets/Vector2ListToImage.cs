@@ -21,6 +21,8 @@ namespace Assets
         private Vector2 lastVector2Right; // Used to store the last vector2 for line drawing, if needed.  
         private Vector2 lastVector2Solo; // Used to store the last vector2 for line drawing, if needed.  
 
+        public DebugTextDisplay debugTextDisplay;
+
         public void Start()
         {
             // Example list of Vector2 values. Replace with your actual data.
@@ -160,10 +162,8 @@ namespace Assets
                 lastVector2Right = vector2; // Store the last vector2 for potential future use (like line drawing)  
             }
 
-
             DrawLinesBetweenPoints(ref texture, pixelPointsLeft); // Draw lines for left points
             DrawLinesBetweenPoints(ref texture, pixelPointsRight); // Draw lines for right points   
-
 
             texture.SetPixels(pixels);
             texture.Apply();
@@ -171,6 +171,11 @@ namespace Assets
             // Create a sprite from the texture and assign it to the Image component
             Sprite sprite = Sprite.Create(texture, new Rect(0, 0, textureWidth, textureHeight), Vector2.one * 0.5f);
             targetImage.sprite = sprite;
+
+            if (debugTextDisplay != null)
+            {
+                debugTextDisplay.UpdateDebugText(Common.GetOutputString(pixelPointsLeft, pixelPointsRight));
+            }
         }
 
         private void DrawLinesBetweenPoints(ref Texture2D texture, List<Vector2Int> pixelPoints)

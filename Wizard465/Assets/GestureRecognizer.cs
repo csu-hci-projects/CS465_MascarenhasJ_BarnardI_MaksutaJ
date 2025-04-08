@@ -8,6 +8,7 @@ public class GestureRecognizer : MonoBehaviour
     private bool _gestureRecognized = false;
     private string _lastRecognizedGesture = string.Empty;
 
+    public DebugTextDisplay debugTextDisplay;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,6 +31,11 @@ public class GestureRecognizer : MonoBehaviour
 
         this.recognizedGesture = recognizedGesture; // Update the recognized phrase
         this._lastRecognizedGesture = recognizedGesture; // Store the last recognized gesture
+
+        if (debugTextDisplay != null)
+        {
+            debugTextDisplay.UpdateDebugText(string.Format("Gesture recognized is {0}.", recognizedGesture));
+        }
 
         Debug.Log("OnVoiceRecognized called with: " + recognizedGesture);
     }

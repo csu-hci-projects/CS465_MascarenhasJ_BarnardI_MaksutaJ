@@ -34,13 +34,16 @@ public class SpellLibrary : MonoBehaviour
             Debug.Log("ShapeComparer is not set.");
             return null;    
         }
-        foreach (SpellDefinition entry in spellDefinitions)
-        {
-            if (this.shapeComparer.Compare(vectors, entry.points))
-            {
-                return entry;
-            }
-        }
-        return null;
+
+        //foreach (SpellDefinition entry in spellDefinitions)
+        //{
+        //    if (this.shapeComparer.Compare(vectors, entry.points))
+        //    {
+        //        return entry;
+        //    }
+        //}
+        SpellDefinition nearestMatch = this.shapeComparer.CompareAll(vectors, spellDefinitions);
+
+        return nearestMatch;
     }
 }
