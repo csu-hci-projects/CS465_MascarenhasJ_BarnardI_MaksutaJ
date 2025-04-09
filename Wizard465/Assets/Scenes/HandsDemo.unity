@@ -2509,6 +2509,7 @@ MonoBehaviour:
   spellDefinitions:
   - {fileID: 1244993534}
   - {fileID: 1781242954}
+  - {fileID: 14120852}
   shapeComparer: {fileID: 1005907047}
 --- !u!1 &1022945141
 GameObject:
