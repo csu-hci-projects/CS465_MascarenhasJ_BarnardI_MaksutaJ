@@ -9,6 +9,7 @@ public class SpellDefinition : MonoBehaviour
     public string Name;
     public string SpeechComponent;
     public List<Vector2> points;
+    public ShapePatternFile shapePatternFile;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

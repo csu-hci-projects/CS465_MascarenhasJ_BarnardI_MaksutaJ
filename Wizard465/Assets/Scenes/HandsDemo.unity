@@ -119,6 +119,69 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &14120849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14120850}
+  - component: {fileID: 14120852}
+  - component: {fileID: 14120851}
+  m_Layer: 0
+  m_Name: Charm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &14120850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14120849}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1005907046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &14120851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14120849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bcb2e4da82eb145b359a911eefab9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file: {fileID: 4900000, guid: 49e68936553d7d441b5456c4ae336f50, type: 3}
+  vectors: []
+--- !u!114 &14120852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14120849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fc0785a370f9646ac6f88c09c246ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Charm
+  SpeechComponent: Charm
+  points: []
+  shapePatternFile: {fileID: 14120851}
 --- !u!1 &14659190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2416,6 +2479,7 @@ Transform:
   m_Children:
   - {fileID: 1781242953}
   - {fileID: 1244993533}
+  - {fileID: 14120850}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1005907047
@@ -4404,6 +4468,7 @@ MonoBehaviour:
   SpeechComponent: 
   points:
   - {x: 0, y: 0}
+  shapePatternFile: {fileID: 0}
 --- !u!1 &1250255603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5694,6 +5759,7 @@ MonoBehaviour:
   - {x: 0.59, y: 0.31}
   - {x: 0.61, y: 0.39}
   - {x: 0.64, y: 0.55}
+  shapePatternFile: {fileID: 0}
 --- !u!82 &1781242955
 AudioSource:
   m_ObjectHideFlags: 0
