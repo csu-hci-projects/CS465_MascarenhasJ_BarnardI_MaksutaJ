@@ -44,7 +44,53 @@ namespace Assets
 
         }
 
-        public void DisplayVector2List(List<Vector2> vector2List)
+        //public void DisplayVector2List(List<Vector2> vector2List)
+        //{
+        //    if (targetImage == null)
+        //    {
+        //        Debug.LogError("Image is not assigned!");
+        //        return;
+        //    }
+
+        //    if (vector2List == null || vector2List.Count == 0)
+        //    {
+        //        Debug.LogWarning("Vector2 list is empty or null.");
+        //        targetImage.sprite = null; // Clear the image
+        //        return;
+        //    }
+
+        //    Texture2D texture = new Texture2D(textureWidth, textureHeight);
+        //    Color[] pixels = new Color[textureWidth * textureHeight];
+
+        //    for (int i = 0; i < pixels.Length; i++)
+        //    {
+        //        pixels[i] = Color.black;
+        //    }
+
+        //    foreach (Vector2 vector2 in vector2List)
+        //    {
+        //        Debug.Log(vector2);
+
+        //        float x = (vector2.x + 1f) * 0.5f * textureWidth;
+        //        float y = (vector2.y + 1f) * 0.5f * textureHeight;
+
+        //        int pixelX = Mathf.Clamp(Mathf.RoundToInt(x), 0, textureWidth - 1);
+        //        int pixelY = Mathf.Clamp(Mathf.RoundToInt(y), 0, textureHeight - 1);
+
+        //        Debug.Log($"Pixel X: {pixelX}, Pixel Y: {pixelY}");
+
+        //        pixels[pixelY * textureWidth + pixelX] = Color.white;
+        //    }
+
+        //    texture.SetPixels(pixels);
+        //    texture.Apply();
+
+        //    // Create a sprite from the texture and assign it to the Image component
+        //    Sprite sprite = Sprite.Create(texture, new Rect(0, 0, textureWidth, textureHeight), Vector2.one * 0.5f);
+        //    targetImage.sprite = sprite;
+        //}
+
+        public void DisplayVector2List(List<Vector2> vector2ListLeft)
         {
             if (targetImage == null)
             {
@@ -52,9 +98,9 @@ namespace Assets
                 return;
             }
 
-            if (vector2List == null || vector2List.Count == 0)
+            if (vector2ListLeft == null || vector2ListLeft.Count == 0)
             {
-                Debug.LogWarning("Vector2 list is empty or null.");
+                Debug.LogWarning("Vector2 list Left is empty or null.");
                 targetImage.sprite = null; // Clear the image
                 return;
             }
@@ -66,21 +112,26 @@ namespace Assets
             {
                 pixels[i] = Color.black;
             }
-
-            foreach (Vector2 vector2 in vector2List)
+            List<Vector2Int> pixelPointsLeft = new List<Vector2Int>();
+            foreach (Vector2 vector2 in vector2ListLeft)
             {
                 Debug.Log(vector2);
 
-                float x = (vector2.x + 1f) * 0.5f * textureWidth;
-                float y = (vector2.y + 1f) * 0.5f * textureHeight;
+                float x = (vector2.x + 0.5f) * 0.5f * textureWidth;
+                float y = (vector2.y + 0.5f) * 0.5f * textureHeight;
 
                 int pixelX = Mathf.Clamp(Mathf.RoundToInt(x), 0, textureWidth - 1);
                 int pixelY = Mathf.Clamp(Mathf.RoundToInt(y), 0, textureHeight - 1);
 
+                pixelPointsLeft.Add(new Vector2Int(pixelX, pixelY)); // Store the pixel point for line drawing
+
                 Debug.Log($"Pixel X: {pixelX}, Pixel Y: {pixelY}");
 
-                pixels[pixelY * textureWidth + pixelX] = Color.white;
+                pixels[pixelY * textureWidth + pixelX] = lineColorLeft;
+                lastVector2Left = vector2; // Store the last vector2 for potential future use (like line drawing)   
             }
+
+            DrawLinesBetweenPoints(ref texture, pixelPointsLeft); // Draw lines for left points
 
             texture.SetPixels(pixels);
             texture.Apply();
@@ -88,6 +139,11 @@ namespace Assets
             // Create a sprite from the texture and assign it to the Image component
             Sprite sprite = Sprite.Create(texture, new Rect(0, 0, textureWidth, textureHeight), Vector2.one * 0.5f);
             targetImage.sprite = sprite;
+
+            if (debugTextDisplay != null)
+            {
+                debugTextDisplay.UpdateDebugText(Common.GetOutputString(pixelPointsLeft));
+            }
         }
 
         public void DisplayVector2List(List<Vector2> vector2ListLeft, List<Vector2> vector2ListRight)

@@ -1,6 +1,8 @@
+using Assets;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 [Serializable]
@@ -10,6 +12,14 @@ public class SpellLibrary : MonoBehaviour
     public List<SpellDefinition> spellDefinitions = new List<SpellDefinition>();
     
     public ShapeComparer shapeComparer;
+
+    private int currentSpellIndex = -1;
+
+    public UnityEngine.UI.Image spellBookImageDisplay;
+    public TMP_Text spellBookTextTitleDisplay;
+    public TMP_Text spellBookTextVocalComponentDisplay;
+    public Vector2ListToImage vectorListToImageConverter;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,7 +29,10 @@ public class SpellLibrary : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentSpellIndex == -1 && spellDefinitions.Count > 0)
+        {
+            currentSpellIndex = 0;
+        }
     }
 
     public SpellDefinition Search(List<Vector2> vectors)
@@ -46,4 +59,41 @@ public class SpellLibrary : MonoBehaviour
 
         return nearestMatch;
     }
+
+    private void displaySpellInSpellBook()
+    {
+        if (this.spellBookImageDisplay != null)
+        {
+            vectorListToImageConverter.DisplayVector2List(this.spellDefinitions[currentSpellIndex].points, null);
+        }
+        if (this.spellBookTextTitleDisplay != null)
+        {
+            this.spellBookTextTitleDisplay.text = this.spellDefinitions[currentSpellIndex].Name;
+        }
+        if (this.spellBookTextVocalComponentDisplay != null)
+        {
+            this.spellBookTextVocalComponentDisplay.text = this.spellDefinitions[currentSpellIndex].SpeechComponent;
+        }
+    }
+
+    public void NextSpell()
+    {
+        currentSpellIndex += 1;
+        if (currentSpellIndex > spellDefinitions.Count - 1)
+        {
+            currentSpellIndex = 0;
+        }
+        displaySpellInSpellBook();  
+    }
+
+    public void PreviousSpell()
+    {
+        currentSpellIndex -= 1;
+        if (currentSpellIndex < 0)
+        {
+            currentSpellIndex = spellDefinitions.Count - 1;
+        }
+        displaySpellInSpellBook();
+    }
+
 }
