@@ -25,8 +25,17 @@ public class SymbolTracer : MonoBehaviour
     public VRVectorProjection vRVectorProjection;
     public Vector2ListToImage vector2ListToImage;
 
+    public GestureRecognizer gestureRecognizer;
+    public SpellLibrary shapeLibrary;
+
+
     public int MaxVectorListSize;
     public TMP_Text debugText;
+
+    [Tooltip("the output for match against the spell definitions.")]
+    public DebugTextDisplay spellMatchDebugTextDisplay;
+    [Tooltip("the output for the flat path that is used to compare to the library.")]
+    public DebugTextDisplay flatPathDebugTextDisplay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -99,6 +108,18 @@ public class SymbolTracer : MonoBehaviour
                 vRVectorProjection.ProjectVector3PathToViewport(tracedPathRight);
                 //vRVectorProjection.vector3PathToVector2ByPerspectiveDivide(tracedPathRight);
 
+                SpellDefinition leftMatch = SearchLibraryForMatch(flatPathLeft);
+                SpellDefinition rightMatch = SearchLibraryForMatch(flatPathRight);
+
+                if (leftMatch != null)
+                {
+                    checkMatch(leftMatch);
+                }
+
+                if (rightMatch != null)
+                {
+                    checkMatch(rightMatch);
+                }
 
                 if (vector2ListToImage != null)
                 {
@@ -107,18 +128,62 @@ public class SymbolTracer : MonoBehaviour
                     //vector2ListToImage.DrawVector2List(flatPathLeft);
                     //vector2ListToImage.DrawVector2List(flatPathRight);
                 }
+
+                if (spellMatchDebugTextDisplay != null)
+                {
+                    spellMatchDebugTextDisplay.UpdateDebugText(string.Format("match Left:\tmatch Right:\n{0}\t{1}\n", leftMatch.name, rightMatch.name));
+                }
+
+                if (flatPathDebugTextDisplay != null)
+                {
+                    flatPathDebugTextDisplay.UpdateDebugText(Common.GetOutputString(flatPathLeft, flatPathRight));
+                }
             }
             else if (inputSource.GetNumberOfInputs() == 1)
             {
 
                 List<Vector2> flatPathSolo = vRVectorProjection.ProjectVector3PathToVector2(tracedPathSolo, vRVectorProjection.mainCamera);
 
+                SpellDefinition soloMatch = SearchLibraryForMatch(flatPathSolo);
+
+                if (soloMatch != null)
+                {
+                    checkMatch(soloMatch);
+                }
+
                 if (vector2ListToImage != null)
                 {
                     vector2ListToImage.DrawVector2List(flatPathSolo);
                 }
+
+                if (flatPathDebugTextDisplay != null)
+                {
+                    flatPathDebugTextDisplay.UpdateDebugText(Common.GetOutputString(flatPathSolo));
+                }
             }
 
+        }
+    }
+
+    private SpellDefinition SearchLibraryForMatch(List<Vector2> flatPath)
+    {
+        SpellDefinition result = null;
+        if (shapeLibrary != null)
+        {
+            result = this.shapeLibrary.Search(flatPath);
+        }
+        else
+        {
+            Debug.LogError("Shape library is not set.");
+        }
+        return result;
+    }
+
+    private void checkMatch(SpellDefinition match)
+    {
+        if (match != null)
+        {
+            this.gestureRecognizer.OnGestureRecognized(match.Name);
         }
     }
 
