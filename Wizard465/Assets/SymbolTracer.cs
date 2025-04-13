@@ -123,10 +123,7 @@ public class SymbolTracer : MonoBehaviour
 
                 if (vector2ListToImage != null)
                 {
-                    //vector2ListToImage.DisplayVector2List(flatPathLeft);
                     vector2ListToImage.DisplayVector2List(flatPathLeft, flatPathRight);
-                    //vector2ListToImage.DrawVector2List(flatPathLeft);
-                    //vector2ListToImage.DrawVector2List(flatPathRight);
                 }
 
                 if (spellMatchDebugTextDisplay != null)

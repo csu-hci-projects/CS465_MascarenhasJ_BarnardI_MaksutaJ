@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Meta.WitAi.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -18,7 +19,12 @@ public class ShapePatternFile : MonoBehaviour
     {
         this.vectors = shapePatternFile.vectors;
     }
-    public ShapePatternFile(string jsonString) : this(JsonUtility.FromJson<ShapePatternFile>(jsonString))
+
+    public ShapePatternFile(ShapePatternData shapePatternData)
+    {
+        this.vectors = shapePatternData.vectors;
+    }
+    public ShapePatternFile(string jsonString) : this(JsonUtility.FromJson<ShapePatternData>(jsonString))
     {
     }
 
@@ -27,7 +33,7 @@ public class ShapePatternFile : MonoBehaviour
         if (file != null)
         {
             string jsonString = file.text;
-            ShapePatternFile shapePatternFile = JsonUtility.FromJson<ShapePatternFile>(jsonString);
+            ShapePatternFile shapePatternFile = new ShapePatternFile(jsonString);
             this.vectors = shapePatternFile.vectors;
         }
     }

@@ -13,12 +13,15 @@ public class SpellDefinition : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (shapePatternFile != null && (this.points == null || this.points.Count == 0))
+        {
+            this.points = shapePatternFile.vectors;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
