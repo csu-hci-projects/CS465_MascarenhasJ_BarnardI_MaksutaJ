@@ -131,11 +131,9 @@ namespace Assets
                 lastVector2Left = vector2; // Store the last vector2 for potential future use (like line drawing)   
             }
 
-            DrawLinesBetweenPoints(ref texture, pixelPointsLeft); // Draw lines for left points
-
             texture.SetPixels(pixels);
 
-            DrawLinesBetweenPoints(ref texture, pixelPoints, lineColorSolo); // Draw lines for left points
+            DrawLinesBetweenPoints(ref texture, pixelPointsLeft, lineColorSolo); // Draw lines for left points
 
             texture.Apply();
 
