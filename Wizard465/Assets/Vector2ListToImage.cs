@@ -66,7 +66,7 @@ namespace Assets
             {
                 pixels[i] = Color.black;
             }
-
+            List<Vector2Int> pixelPoints = new List<Vector2Int>();
             foreach (Vector2 vector2 in vector2List)
             {
                 Debug.Log(vector2);
@@ -77,12 +77,17 @@ namespace Assets
                 int pixelX = Mathf.Clamp(Mathf.RoundToInt(x), 0, textureWidth - 1);
                 int pixelY = Mathf.Clamp(Mathf.RoundToInt(y), 0, textureHeight - 1);
 
+                pixelPoints.Add(new Vector2Int(pixelX, pixelY)); // Store the pixel point for line drawing
+
                 Debug.Log($"Pixel X: {pixelX}, Pixel Y: {pixelY}");
 
-                pixels[pixelY * textureWidth + pixelX] = Color.white;
+                pixels[pixelY * textureWidth + pixelX] = lineColorSolo;
             }
 
             texture.SetPixels(pixels);
+
+            DrawLinesBetweenPoints(ref texture, pixelPoints, lineColorSolo); // Draw lines for left points
+
             texture.Apply();
 
             // Create a sprite from the texture and assign it to the Image component
@@ -162,10 +167,11 @@ namespace Assets
                 lastVector2Right = vector2; // Store the last vector2 for potential future use (like line drawing)  
             }
 
-            DrawLinesBetweenPoints(ref texture, pixelPointsLeft); // Draw lines for left points
-            DrawLinesBetweenPoints(ref texture, pixelPointsRight); // Draw lines for right points   
-
             texture.SetPixels(pixels);
+
+            DrawLinesBetweenPoints(ref texture, pixelPointsLeft, lineColorLeft); // Draw lines for left points
+            DrawLinesBetweenPoints(ref texture, pixelPointsRight, lineColorRight); // Draw lines for right points   
+
             texture.Apply();
 
             // Create a sprite from the texture and assign it to the Image component
@@ -178,12 +184,12 @@ namespace Assets
             }
         }
 
-        private void DrawLinesBetweenPoints(ref Texture2D texture, List<Vector2Int> pixelPoints)
+        private void DrawLinesBetweenPoints(ref Texture2D texture, List<Vector2Int> pixelPoints, Color lineColor)
         {
             // Draw lines between points
             for (int i = 0; i < pixelPoints.Count - 1; i++)
             {
-                DrawLine(texture, pixelPoints[i], pixelPoints[i + 1], lineColorSolo);
+                DrawLine(texture, pixelPoints[i], pixelPoints[i + 1], lineColor);
             }
         }
 
