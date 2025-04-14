@@ -150,7 +150,7 @@ public class SymbolTracer : MonoBehaviour
 
                 if (vector2ListToImage != null)
                 {
-                    vector2ListToImage.DrawVector2List(flatPathSolo);
+                    vector2ListToImage.DisplayVector2List(flatPathSolo);
                 }
 
                 if (flatPathDebugTextDisplay != null)

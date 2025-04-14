@@ -44,6 +44,8 @@ public class SpellLibrary : MonoBehaviour
         //}
         //Vector2[] scaledVectors = Vector2Scaling.ScaleVectorsToFill(vectors.ToArray());
         //List<Vector2> scaledList = new List<Vector2>(scaledVectors);
+        //Vector2[] scaledVectors = Vector2Scaling.ScaleByMinMax(vectors);
+        //List<Vector2> scaledList = new List<Vector2>(scaledVectors);
 
         //SpellDefinition nearestMatch = this.shapeComparer.CompareAll(scaledList, spellDefinitions);
 
