@@ -8,7 +8,7 @@ public class TextWriter : MonoBehaviour
 
     private string _fileName;
 
-    private string fileName
+    public string fileName
     {
         get
         {
@@ -63,5 +63,15 @@ public class TextWriter : MonoBehaviour
     private void writeTextToLog(string toWrite)
     {
         File.AppendAllText(this.filePath, toWrite);
+    }
+
+    public void AppendAllText(string toWrite)
+    {
+        File.AppendAllText(this.filePath, toWrite);
+    }
+
+    public void WriteAllText(string toWrite)
+    {
+        File.WriteAllText(this.filePath, toWrite);
     }
 }
