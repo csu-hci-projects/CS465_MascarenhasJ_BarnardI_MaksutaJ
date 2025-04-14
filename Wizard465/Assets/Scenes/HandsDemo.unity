@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bcb2e4da82eb145b359a911eefab9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file: {fileID: 4900000, guid: 49e68936553d7d441b5456c4ae336f50, type: 3}
+  file: {fileID: 4900000, guid: fe2bd2c99e8243743884f10ba84015e9, type: 3}
   vectors: []
 --- !u!114 &14120852
 MonoBehaviour:
@@ -2478,8 +2478,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1781242953}
-  - {fileID: 1244993533}
   - {fileID: 14120850}
+  - {fileID: 1244993533}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1005907047
@@ -5717,6 +5717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1781242953}
   - component: {fileID: 1781242954}
+  - component: {fileID: 1781242956}
   - component: {fileID: 1781242955}
   m_Layer: 0
   m_Name: Fireball
@@ -5760,7 +5761,7 @@ MonoBehaviour:
   - {x: 0.59, y: 0.31}
   - {x: 0.61, y: 0.39}
   - {x: 0.64, y: 0.55}
-  shapePatternFile: {fileID: 0}
+  shapePatternFile: {fileID: 1781242956}
 --- !u!82 &1781242955
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5858,6 +5859,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1781242956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781242952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bcb2e4da82eb145b359a911eefab9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file: {fileID: 4900000, guid: 45d06107c36fef54193cdd27dd7f63ed, type: 3}
+  vectors: []
 --- !u!1 &1787782240
 GameObject:
   m_ObjectHideFlags: 0
@@ -7033,8 +7048,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1005907048}
     - target: {fileID: 970588061498026240, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: samplingInterval
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 970588061498026240, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
       propertyPath: MaxVectorListSize
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 970588061498026240, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
       propertyPath: gestureRecognizer
