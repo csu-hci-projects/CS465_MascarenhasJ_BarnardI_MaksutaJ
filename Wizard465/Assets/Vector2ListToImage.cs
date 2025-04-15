@@ -127,13 +127,14 @@ namespace Assets
 
                 Debug.Log($"Pixel X: {pixelX}, Pixel Y: {pixelY}");
 
-                pixels[pixelY * textureWidth + pixelX] = lineColorLeft;
+                pixels[pixelY * textureWidth + pixelX] = lineColorSolo;
                 lastVector2Left = vector2; // Store the last vector2 for potential future use (like line drawing)   
             }
 
-            DrawLinesBetweenPoints(ref texture, pixelPointsLeft); // Draw lines for left points
-
             texture.SetPixels(pixels);
+
+            DrawLinesBetweenPoints(ref texture, pixelPointsLeft, lineColorSolo); // Draw lines for left points
+
             texture.Apply();
 
             // Create a sprite from the texture and assign it to the Image component
@@ -218,10 +219,11 @@ namespace Assets
                 lastVector2Right = vector2; // Store the last vector2 for potential future use (like line drawing)  
             }
 
-            DrawLinesBetweenPoints(ref texture, pixelPointsLeft); // Draw lines for left points
-            DrawLinesBetweenPoints(ref texture, pixelPointsRight); // Draw lines for right points   
-
             texture.SetPixels(pixels);
+
+            DrawLinesBetweenPoints(ref texture, pixelPointsLeft, lineColorLeft); // Draw lines for left points
+            DrawLinesBetweenPoints(ref texture, pixelPointsRight, lineColorRight); // Draw lines for right points   
+
             texture.Apply();
 
             // Create a sprite from the texture and assign it to the Image component
@@ -234,12 +236,12 @@ namespace Assets
             }
         }
 
-        private void DrawLinesBetweenPoints(ref Texture2D texture, List<Vector2Int> pixelPoints)
+        private void DrawLinesBetweenPoints(ref Texture2D texture, List<Vector2Int> pixelPoints, Color lineColor)
         {
             // Draw lines between points
             for (int i = 0; i < pixelPoints.Count - 1; i++)
             {
-                DrawLine(texture, pixelPoints[i], pixelPoints[i + 1], lineColorSolo);
+                DrawLine(texture, pixelPoints[i], pixelPoints[i + 1], lineColor);
             }
         }
 

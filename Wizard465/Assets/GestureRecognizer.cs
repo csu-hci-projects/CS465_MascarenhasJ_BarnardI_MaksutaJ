@@ -42,12 +42,12 @@ public class GestureRecognizer : MonoBehaviour
 
     internal bool IsGestureRecognized()
     {
-        return (true);
+        return !string.IsNullOrEmpty(this.recognizedGesture);
     }
 
     internal string GetRecognizedGesture()
     {
-        return "fireball"; // TODO: recognizedGesture;
+        return this.recognizedGesture; // "fireball"; // TODO: recognizedGesture;
     }
 
     public void Reset()
