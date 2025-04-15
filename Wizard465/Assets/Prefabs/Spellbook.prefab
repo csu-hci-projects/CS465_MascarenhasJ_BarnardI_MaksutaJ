@@ -1,5 +1,68 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1020274238098518957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5832865473500979131}
+  - component: {fileID: 4700051893461874330}
+  - component: {fileID: 5442006561927789998}
+  m_Layer: 0
+  m_Name: Smoke
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5832865473500979131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020274238098518957}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6882089822652915912}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4700051893461874330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020274238098518957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fc0785a370f9646ac6f88c09c246ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Smoke
+  SpeechComponent: Smoke
+  points: []
+  shapePatternFile: {fileID: 5442006561927789998}
+--- !u!114 &5442006561927789998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020274238098518957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bcb2e4da82eb145b359a911eefab9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file: {fileID: 4900000, guid: 9801405175800714f9bc07354ced8e1e, type: 3}
+  vectors: []
 --- !u!1 &1987802972314067969
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,8 +159,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7288223701499468640}
-  - {fileID: 2813790798012746858}
   - {fileID: 7460666438697583906}
+  - {fileID: 5832865473500979131}
+  - {fileID: 2813790798012746858}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5412967041413526932
@@ -116,6 +180,7 @@ MonoBehaviour:
   - {fileID: 5716476020767827596}
   - {fileID: 5960543409662755022}
   - {fileID: 2972623214480004821}
+  - {fileID: 4700051893461874330}
   shapeComparer: {fileID: 1969547364070660070}
   spellBookImageDisplay: {fileID: 0}
   spellBookTextTitleDisplay: {fileID: 0}
@@ -213,6 +278,7 @@ GameObject:
   - component: {fileID: 7288223701499468640}
   - component: {fileID: 5960543409662755022}
   - component: {fileID: 6601768525069147958}
+  - component: {fileID: 3056482763509541363}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -255,7 +321,7 @@ MonoBehaviour:
   - {x: 0.59, y: 0.31}
   - {x: 0.61, y: 0.39}
   - {x: 0.64, y: 0.55}
-  shapePatternFile: {fileID: 0}
+  shapePatternFile: {fileID: 3056482763509541363}
 --- !u!82 &6601768525069147958
 AudioSource:
   m_ObjectHideFlags: 0
@@ -353,3 +419,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3056482763509541363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7978097488964279666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bcb2e4da82eb145b359a911eefab9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file: {fileID: 4900000, guid: 45d06107c36fef54193cdd27dd7f63ed, type: 3}
+  vectors: []

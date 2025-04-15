@@ -71,7 +71,7 @@ public class SpellLibrary : MonoBehaviour
     {
         if (this.spellBookImageDisplay != null)
         {
-            vectorListToImageConverter.DisplayVector2List(this.spellDefinitions[currentSpellIndex].points, null);
+            vectorListToImageConverter.DisplayVector2List(this.spellDefinitions[currentSpellIndex].points);
         }
         if (this.spellBookTextTitleDisplay != null)
         {
