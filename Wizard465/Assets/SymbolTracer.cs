@@ -17,7 +17,7 @@ public class SymbolTracer : MonoBehaviour
     private Vector3 lastRightPosition = new Vector3();
     private Vector3 lastSoloPosition = new Vector3();
 
-    public float samplingInterval = 0.01f;
+    public float samplingInterval;
     private float timeSinceLastSample = 0f;
     public bool isRecording = false;
     public InputPositionSource inputSource;
@@ -46,7 +46,6 @@ public class SymbolTracer : MonoBehaviour
         lastLeftPosition = new Vector3();
         lastRightPosition = new Vector3();
         lastSoloPosition = new Vector3();
-        samplingInterval = 0.01f;
         timeSinceLastSample = 0f;
         isRecording = false;
     }
