@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee02d502f99f8fc448a14762e5f3b30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logWriter: {fileID: 0}
   voiceRecognizer: {fileID: 3526202155558810288}
   gestureRecognizer: {fileID: 2257547010760469971}
   eventPairs: []
@@ -156,6 +157,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 87566635663470694, guid: 98396595b2cf48f4c994220e98be5d1d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 623998955449989233}
+    - targetCorrespondingSourceObject: {fileID: 87566635663470694, guid: 98396595b2cf48f4c994220e98be5d1d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4997259131456545835}
   m_SourcePrefab: {fileID: 100100000, guid: 98396595b2cf48f4c994220e98be5d1d, type: 3}
 --- !u!1 &28474618652639904 stripped
 GameObject:
@@ -250,6 +254,54 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: smoke
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDidNotMatch:
+    m_PersistentCalls:
+      m_Calls: []
+  onOutOfDomain:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4997259131456545835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28474618652639904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591c3d6f017c11b4faa41506d75635b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Voice: {fileID: 0}
+  ValidateEarly: 0
+  intent: cast_charm
+  confidenceThreshold: 0.6
+  valueMatchers:
+  - path: entities.spell_type:spell_type[0].value
+    witValueReference: {fileID: 0}
+    contentRequired: 1
+    matchMethod: 0
+    comparisonMethod: 0
+    matchValue: 
+    floatingPointComparisonTolerance: 0.00009999999747378752
+    allowConfidenceOverlap: 0
+    confidenceRanges: []
+  formattedValueEvents: []
+  onMultiValueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3526202155558810288}
+        m_TargetAssemblyTypeName: VoiceRecognizer, Assembly-CSharp
+        m_MethodName: OnVoiceRecognized
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: charm
           m_BoolArgument: 0
         m_CallState: 2
   onDidNotMatch:
@@ -387,6 +439,7 @@ MonoBehaviour:
   lineColorRight: {r: 1, g: 0, b: 0, a: 1}
   lineColorSolo: {r: 1, g: 0, b: 0, a: 1}
   lineThickness: 2
+  debugTextDisplay: {fileID: 0}
 --- !u!114 &4836106659229532523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17278ec2e3b3ebc478d3f56b0c0b35d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugTextDisplay: {fileID: 0}
 --- !u!4 &1770989103822171800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5305664129364172998, guid: cb75fbfeded8ec24f89e359c99ae4da2, type: 3}
