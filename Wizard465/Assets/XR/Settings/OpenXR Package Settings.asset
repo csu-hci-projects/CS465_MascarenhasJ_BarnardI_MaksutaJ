@@ -122,6 +122,26 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &-7426368761088247971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ffb8ef72016454589ac82b355a0897, type: 3}
+  m_Name: LogitechMxInkControllerProfile Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Logitech MX Ink Stylus Interaction Profile
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.input.logitechmxink
+  openxrExtensionStrings: XR_LOGITECH_mx_ink_stylus_interaction
+  company: Logitech
+  priority: 0
+  required: 0
 --- !u!114 &-6788796078742506230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +357,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
---- !u!114 &-3919061021267208686
+--- !u!114 &-3950596247789598496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -884,7 +904,7 @@ MonoBehaviour:
   - {fileID: -8915220102317519925}
   - {fileID: -5660736653482910624}
   - {fileID: -6788796078742506230}
-  - {fileID: -285909331412986687}
+  - {fileID: 5646310646071725414}
   - {fileID: 6439280031571297239}
   - {fileID: 5145979518200875525}
   - {fileID: 5132973640662896807}
@@ -1070,6 +1090,26 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &5646310646071725414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ffb8ef72016454589ac82b355a0897, type: 3}
+  m_Name: LogitechMxInkControllerProfile Metro
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Logitech MX Ink Stylus Interaction Profile
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.input.logitechmxink
+  openxrExtensionStrings: XR_LOGITECH_mx_ink_stylus_interaction
+  company: Logitech
+  priority: 0
+  required: 0
 --- !u!114 &5649993695724282908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,7 +1183,7 @@ MonoBehaviour:
   - {fileID: 6132771228187792402}
   - {fileID: -3652941495263584540}
   - {fileID: -3539859168209253604}
-  - {fileID: -3919061021267208686}
+  - {fileID: -3950596247789598496}
   - {fileID: -729407777792995516}
   - {fileID: 2195567166117926172}
   - {fileID: -4217503523949876861}
@@ -1307,7 +1347,7 @@ MonoBehaviour:
   - {fileID: -8196915667404202940}
   - {fileID: -4757062769466820637}
   - {fileID: -1784777460356210203}
-  - {fileID: 4604576234263895430}
+  - {fileID: -7426368761088247971}
   - {fileID: 6774770701673109272}
   - {fileID: 7435941569208912960}
   - {fileID: -2695314212914407415}
