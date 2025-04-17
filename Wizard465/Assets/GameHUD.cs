@@ -1,15 +1,16 @@
+using Oculus.Voice.Windows;
 using System;
 using TMPro;
 using UnityEngine;
 
 public class GameHUD : MonoBehaviour
 {
-    public Game game;
-    //public Transform headTransform;
-    //public Canvas canvas;
+    private Game game;
 
+    public GameObject HUDCanvas;
     public TMP_Text latinSquareCodeText;
     public TMP_Text inputMethodText;
+    public TMP_Text currentLevelText;
 
     private Transform theTransform;
 
@@ -20,6 +21,8 @@ public class GameHUD : MonoBehaviour
     public GameObject LatinSquareCodeInputPanel;
 
     public TMP_InputField latinSquareCodeInputField;
+
+    public GameObject GameOverCanvas;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,7 +37,56 @@ public class GameHUD : MonoBehaviour
     void Update()
     {
         setTransformToHead();
+
+        if (game.gameState == Game.GameState.Playing)
+        {
+            showHUDCanvas();
+        }
+        else
+        {
+            hideHUDCanvas();
+        }
+        if (game.gameState == Game.GameState.GameOver)
+        {
+            ShowGameOverCanvas();
+        }
+        else
+        {
+            HideGameOverCanvas();   
+        }
         showLatinSquareCodeInputPanel();
+    }
+
+    private void ShowGameOverCanvas()
+    {
+        if (GameOverCanvas != null)
+        {
+            GameOverCanvas.SetActive(true);
+        }
+    }
+
+    private void HideGameOverCanvas()
+    {
+        if (GameOverCanvas != null)
+        {
+            GameOverCanvas.SetActive(false);
+        }
+    }   
+
+    private void showHUDCanvas()
+    {
+        if (HUDCanvas != null)
+        {
+            HUDCanvas.SetActive(true);
+        }
+    }
+
+    private void hideHUDCanvas()
+    {
+        if (HUDCanvas != null)
+        {
+            HUDCanvas.SetActive(false);
+        }
     }
 
     private void showLatinSquareCodeInputPanel()
@@ -68,6 +120,15 @@ public class GameHUD : MonoBehaviour
         {
             setLatinSquareCodeText(game.latinSquareCode);
             setInputMethodText(game.inputMethod.ToString());
+            setCurrentLevelText((game.currentLevelIndex + 1).ToString());
+        }
+    }
+
+    private void setCurrentLevelText(string text)
+    {
+        if (currentLevelText != null)
+        {
+            currentLevelText.text = text;
         }
     }
 
@@ -113,10 +174,10 @@ public class GameHUD : MonoBehaviour
         //});
     }
 
-    public void ShowKeyboard() 
+    public void ShowKeyboard()
     {
         overlayKeyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
-        
+
     }
 
     public void GetKeyboardText()
@@ -132,7 +193,14 @@ public class GameHUD : MonoBehaviour
         if (this.latinSquareCodeInputField != null)
         {
             game.latinSquareCode = this.latinSquareCodeInputField.text;
-        }   
+        }
+        game.LoadLatinSquareCode();
+        game.StartGame();
+    }
+
+    public void NextLevel()
+    {
+        game.NextLevel();
     }
 
 }
