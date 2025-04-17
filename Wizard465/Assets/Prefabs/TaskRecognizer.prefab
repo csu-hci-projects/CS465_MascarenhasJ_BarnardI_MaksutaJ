@@ -45,6 +45,117 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d156291515725459808f264bf77666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1092681574725935094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7310121375833018314}
+  - component: {fileID: 6885345277532014052}
+  - component: {fileID: 5517271452259624288}
+  m_Layer: 0
+  m_Name: Activation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7310121375833018314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092681574725935094}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3862975553398142179}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6885345277532014052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092681574725935094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b9cf54c47f40ee9c3eb30ea8eb89b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Handedness: 1
+  m_UpdateType: 1
+  m_PoseUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JointsUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TrackingAcquired:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TrackingLost:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TrackingChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5517271452259624288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092681574725935094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf93899325d5df74eb9176e097ee3d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HandTrackingEvents: {fileID: 6885345277532014052}
+  m_HandShapeOrPose: {fileID: 11400000, guid: b1b759cfdab277e42805ae0212c3c9ad, type: 2}
+  m_TargetTransform: {fileID: 0}
+  m_Background: {fileID: 0}
+  m_GesturePerformed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Meta.WitAi.VoiceService, Meta.WitAi
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_GestureEnded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Oculus.Voice.AppVoiceExperience, VoiceSDK.Runtime
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_MinimumHoldTime: 0.2
+  m_GestureDetectionInterval: 0.1
+  m_StaticGestures: []
 --- !u!1 &2040079079564107728
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +260,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3805043792811263525, guid: 98396595b2cf48f4c994220e98be5d1d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7310121375833018314}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 87566635663470694, guid: 98396595b2cf48f4c994220e98be5d1d, type: 3}
       insertIndex: -1
@@ -439,7 +553,7 @@ MonoBehaviour:
   lineColorRight: {r: 1, g: 0, b: 0, a: 1}
   lineColorSolo: {r: 1, g: 0, b: 0, a: 1}
   lineThickness: 2
-  debugTextDisplay: {fileID: 0}
+  debugTextDisplay: {fileID: 1603829770218067701}
 --- !u!114 &4836106659229532523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,9 +592,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17278ec2e3b3ebc478d3f56b0c0b35d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugTextDisplay: {fileID: 0}
+  debugTextDisplay: {fileID: 7081335874667548268}
 --- !u!4 &1770989103822171800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5305664129364172998, guid: cb75fbfeded8ec24f89e359c99ae4da2, type: 3}
   m_PrefabInstance: {fileID: 5850827233553337950}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7081335874667548268 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3708614422582444082, guid: cb75fbfeded8ec24f89e359c99ae4da2, type: 3}
+  m_PrefabInstance: {fileID: 5850827233553337950}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7ae43f515ce0647bb930b5c8fc2c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bcb2e4da82eb145b359a911eefab9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file: {fileID: 4900000, guid: 49e68936553d7d441b5456c4ae336f50, type: 3}
+  file: {fileID: 4900000, guid: fe2bd2c99e8243743884f10ba84015e9, type: 3}
   vectors: []
 --- !u!1 &2719943791837168755
 GameObject:
@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 7288223701499468640}
   - component: {fileID: 5960543409662755022}
   - component: {fileID: 6601768525069147958}
+  - component: {fileID: 3867111732525875475}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -319,7 +320,7 @@ MonoBehaviour:
   - {x: 0.59, y: 0.31}
   - {x: 0.61, y: 0.39}
   - {x: 0.64, y: 0.55}
-  shapePatternFile: {fileID: 0}
+  shapePatternFile: {fileID: 3867111732525875475}
 --- !u!82 &6601768525069147958
 AudioSource:
   m_ObjectHideFlags: 0
@@ -417,3 +418,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3867111732525875475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7978097488964279666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bcb2e4da82eb145b359a911eefab9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file: {fileID: 4900000, guid: 45d06107c36fef54193cdd27dd7f63ed, type: 3}
+  vectors: []

@@ -42,7 +42,7 @@ public class VoiceRecognizer : MonoBehaviour
 
     internal bool IsPhraseRecognized()
     {
-        return ((object)recognizedPhrase != null);
+        return (!string.IsNullOrEmpty(recognizedPhrase)); // (object)recognizedPhrase != null);
     }
 
     internal string GetRecognizedPhrase()
