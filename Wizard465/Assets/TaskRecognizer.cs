@@ -108,7 +108,7 @@ public class TaskRecognizer : MonoBehaviour
             string recognizedPhrase = voiceRecognizer.GetRecognizedPhrase();
             string recognizedGesture = gestureRecognizer.GetRecognizedGesture();
 
-            if (recognizedPhrase == recognizedGesture)
+            if (recognizedPhrase.ToLower() == recognizedGesture.ToLower())
             {
                 // Perform the task based on the recognized phrase and gesture
                 OnTaskRecognized(recognizedPhrase);

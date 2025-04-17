@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bcb2e4da82eb145b359a911eefab9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file: {fileID: 4900000, guid: 49e68936553d7d441b5456c4ae336f50, type: 3}
+  file: {fileID: 4900000, guid: fe2bd2c99e8243743884f10ba84015e9, type: 3}
   vectors: []
 --- !u!1 &2719943791837168755
 GameObject:
@@ -96,8 +96,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7288223701499468640}
-  - {fileID: 2813790798012746858}
   - {fileID: 7460666438697583906}
+  - {fileID: 6149620602002759726}
+  - {fileID: 2813790798012746858}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5412967041413526932
@@ -153,6 +154,69 @@ MonoBehaviour:
   lineColorSolo: {r: 1, g: 0, b: 0, a: 1}
   lineThickness: 2
   debugTextDisplay: {fileID: 0}
+--- !u!1 &3795698549676755592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6149620602002759726}
+  - component: {fileID: 2455745524705666549}
+  - component: {fileID: 1466787792881409378}
+  m_Layer: 0
+  m_Name: Smoke
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6149620602002759726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795698549676755592}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6882089822652915912}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2455745524705666549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795698549676755592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fc0785a370f9646ac6f88c09c246ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Smoke
+  SpeechComponent: smoke
+  points: []
+  shapePatternFile: {fileID: 1466787792881409378}
+--- !u!114 &1466787792881409378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795698549676755592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bcb2e4da82eb145b359a911eefab9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file: {fileID: 4900000, guid: 58e72d7d59706d445b764d73bc01ef8c, type: 3}
+  vectors: []
 --- !u!1 &6946387881639498443
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +277,7 @@ GameObject:
   - component: {fileID: 7288223701499468640}
   - component: {fileID: 5960543409662755022}
   - component: {fileID: 6601768525069147958}
+  - component: {fileID: 3867111732525875475}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -255,7 +320,7 @@ MonoBehaviour:
   - {x: 0.59, y: 0.31}
   - {x: 0.61, y: 0.39}
   - {x: 0.64, y: 0.55}
-  shapePatternFile: {fileID: 0}
+  shapePatternFile: {fileID: 3867111732525875475}
 --- !u!82 &6601768525069147958
 AudioSource:
   m_ObjectHideFlags: 0
@@ -353,3 +418,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3867111732525875475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7978097488964279666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bcb2e4da82eb145b359a911eefab9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  file: {fileID: 4900000, guid: 45d06107c36fef54193cdd27dd7f63ed, type: 3}
+  vectors: []
