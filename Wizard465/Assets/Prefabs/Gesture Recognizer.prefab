@@ -145,7 +145,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5305664129364172998}
   - component: {fileID: 6650243169683498846}
+  - component: {fileID: 2018460482050079800}
+  - component: {fileID: 4793687660821032167}
   - component: {fileID: 7177761694831565342}
+  - component: {fileID: 4740762190567439447}
   m_Layer: 0
   m_Name: Gesture Recognizer
   m_TagString: Untagged
@@ -199,6 +202,117 @@ MonoBehaviour:
   debugText: {fileID: 0}
   spellMatchDebugTextDisplay: {fileID: 4285454365414696787}
   flatPathDebugTextDisplay: {fileID: 3823556379106842541}
+--- !u!114 &2018460482050079800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190548415307067389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b25e003675fa354880a4f795714c42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSources:
+  - inputMethod: 1
+    inputPositionSource: {fileID: 4793687660821032167}
+  - inputMethod: 2
+    inputPositionSource: {fileID: 7177761694831565342}
+  - inputMethod: 3
+    inputPositionSource: {fileID: 4740762190567439447}
+--- !u!114 &4793687660821032167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190548415307067389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b062f851d07271b42b5dbddb25888110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftControllerPositionActionProperty:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Controller Position Action Property
+      m_Type: 0
+      m_ExpectedControlType: Vector3
+      m_Id: a7da12c8-c1a4-42a1-8d99-2cd780980ddc
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: ab9f13ff-b322-4ccb-9d37-c0d59c832458
+        m_Path: <XRController>{LeftHand}/devicePosition
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Left Controller Position Action Property
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  leftControllerRotationActionProperty:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Controller Rotation Action Property
+      m_Type: 0
+      m_ExpectedControlType: Quaternion
+      m_Id: f707cae6-1bd9-4688-a2c7-7f16cd01fa0c
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 4be7530d-29ff-4b10-a76c-3133abcaa939
+        m_Path: <XRController>{LeftHand}/deviceRotation
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Left Controller Rotation Action Property
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  rightControllerPositionActionProperty:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Controller Position Action Property
+      m_Type: 0
+      m_ExpectedControlType: Vector3
+      m_Id: 42f81b00-295f-4c31-af3a-59f4d65b3700
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 17318a92-04d3-45ed-81d1-2fbff92dd0a6
+        m_Path: <XRController>{RightHand}/devicePosition
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Right Controller Position Action Property
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  rightControllerRotationActionProperty:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Controller Rotation Action Property
+      m_Type: 0
+      m_ExpectedControlType: Quaternion
+      m_Id: d4787b44-78f3-4a24-a10d-95a747e8bd41
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: d752a97c-e3c4-46f4-8a88-95e10f5c77b8
+        m_Path: <XRController>{RightHand}/deviceRotation
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Right Controller Rotation Action Property
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!114 &7177761694831565342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +327,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHandPosition: {x: 0, y: 0, z: 0}
   rightHandPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &4740762190567439447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190548415307067389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d028b88c99593347aeda7d35f5da8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &7503923820057611329
 GameObject:
   m_ObjectHideFlags: 0
