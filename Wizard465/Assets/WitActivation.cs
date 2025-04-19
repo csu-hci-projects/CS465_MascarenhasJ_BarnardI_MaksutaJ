@@ -16,10 +16,17 @@ public class WitActivation : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        try
         {
-            Debug.Log("*** Pressed Space bar ***");
-            ActivateWit();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("*** Pressed Space bar ***");
+                ActivateWit();
+            }
+        }
+        catch (System.Exception)
+        {
+            // do nothing.
         }
     }
 

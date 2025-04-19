@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Unity.Android.Types;
 using UnityEditor.XR.Interaction.Toolkit.Locomotion.Teleportation;
 using UnityEngine;
+using static TaskRecognizer;
 
 public class Game
 {
@@ -59,7 +60,7 @@ public class Game
             InputMethod result = InputMethod.None;
             if (gameState == GameState.Playing)
             {
-                result = gameLevels[currentLevelIndex].inputMethod;
+                result = gameLevels[currentLevelIndex].InputMethod;
             }
             return result;
         }
@@ -106,6 +107,19 @@ public class Game
 
         gameLevels = new List<GameLevel>();
         currentLevelIndex = -1;
+    }
+
+    public GameLevel currentLevel
+    {
+        get
+        {
+            GameLevel result = null;
+            if (currentLevelIndex >= 0 && currentLevelIndex < gameLevels.Count)
+            {
+                result = gameLevels[currentLevelIndex];
+            }
+            return result;
+        }
     }
 
     public InputMethod GetInputMethodFromLatinSquareDigit(int latinSquareDigit)
@@ -155,7 +169,19 @@ public class Game
         else
         {
             gameState = GameState.GameOver;
+            currentLevelIndex = -1;
+            RaiseOnGameOVer(EventArgs.Empty);   
+            Debug.Log("Game Over! All levels completed.");
         }
+    }
+
+    public delegate void OnGameOver(object sender, EventArgs eventArgs);
+
+    public event OnGameOver onGameOver;
+
+    protected virtual void RaiseOnGameOVer(EventArgs e)
+    {
+        onGameOver?.Invoke(this, e);
     }
 
 }
