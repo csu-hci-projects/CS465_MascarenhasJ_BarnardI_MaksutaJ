@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a0eec8b859999e140aef30bcd1a81dfd
+timeCreated: 1484171296
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 213197
+  packageName: Unity Terrain - URP Demo Scene
+  packageVersion: 1.0.3
+  assetPath: Assets/TerrainDemoScene_URP/TextMeshPro/Fonts/LiberationSans - OFL.txt
+  uploadId: 727820

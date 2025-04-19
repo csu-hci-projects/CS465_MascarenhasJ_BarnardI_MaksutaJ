@@ -75,7 +75,7 @@ public class Game
         int result = -1;
         if (gameLevels != null && gameLevels.Count > 0 && currentLevelIndexInRange)
         {
-            result = gameLevels[currentLevelIndex].latinSquareValue;
+            result = gameLevels[currentLevelIndex].LatinSquareValue;
         }
         return result;
     }
