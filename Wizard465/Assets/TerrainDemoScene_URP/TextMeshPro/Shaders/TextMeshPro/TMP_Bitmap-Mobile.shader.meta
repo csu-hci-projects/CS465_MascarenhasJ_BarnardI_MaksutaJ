@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ebeb5f5d1d3ae214ba1eed622d45d726
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 213197
+  packageName: Unity Terrain - URP Demo Scene
+  packageVersion: 1.0.3
+  assetPath: Assets/TerrainDemoScene_URP/TextMeshPro/Shaders/TextMeshPro/TMP_Bitmap-Mobile.shader
+  uploadId: 727820

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3b0883e9fd132ea478ecb3b490bf1b3d
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 213197
+  packageName: Unity Terrain - URP Demo Scene
+  packageVersion: 1.0.3
+  assetPath: Assets/TerrainDemoScene_URP/TextMeshPro/Shaders/TextMeshPro/TMP_Sprite.shader
+  uploadId: 727820

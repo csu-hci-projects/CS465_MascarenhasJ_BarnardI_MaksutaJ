@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b4fa7284709e80348be2f0a67960002d
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 213197
+  packageName: Unity Terrain - URP Demo Scene
+  packageVersion: 1.0.3
+  assetPath: Assets/TerrainDemoScene_URP/TextMeshPro/Shaders/TextMeshPro/TMP_SDF.shader
+  uploadId: 727820
