@@ -19,7 +19,10 @@ public class SymbolTracer : MonoBehaviour
 
     public float samplingInterval;
     private float timeSinceLastSample = 0f;
-    public bool isRecording = false;
+    public bool _isRecording = false;
+
+    public bool isRecording { get { return _isRecording; } set { _isRecording = value; } }
+
     public InputPositionSource inputSource;
     public DebugTextDisplay debugTextDisplay;
     public VRVectorProjection vRVectorProjection;
@@ -48,11 +51,15 @@ public class SymbolTracer : MonoBehaviour
         lastSoloPosition = new Vector3();
         timeSinceLastSample = 0f;
         isRecording = false;
+
+        this.inputSource = InputSourceManager.GetCurrentInputSource();
     }
 
     // Update is called once per frame
     void Update()
     {
+        this.inputSource = InputSourceManager.GetCurrentInputSource();
+        this.isRecording = (inputSource != null && inputSource.enabled);
         if (isRecording && inputSource != null)
         {
             timeSinceLastSample += Time.deltaTime;

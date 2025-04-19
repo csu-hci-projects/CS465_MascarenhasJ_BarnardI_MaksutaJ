@@ -1021,6 +1021,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 349995040952344995, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
       insertIndex: -1
       addedObject: {fileID: 877756667}
+    - targetCorrespondingSourceObject: {fileID: 349995040952344995, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 877756668}
+    - targetCorrespondingSourceObject: {fileID: 349995040952344995, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 877756670}
   m_SourcePrefab: {fileID: 100100000, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
 --- !u!114 &762448870 stripped
 MonoBehaviour:
@@ -1130,6 +1136,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugText: {fileID: 1171424432}
+--- !u!114 &877756668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762448872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d028b88c99593347aeda7d35f5da8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &877756670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762448872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc41e765b219cb442a2c25e4e9306ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftControllerPosition: {x: 0, y: 0, z: 0}
+  rightControllerPosition: {x: 0, y: 0, z: 0}
+  leftHandCharacteristics: 320
+  rightHandCharacteristics: 576
 --- !u!1 &1056099222
 GameObject:
   m_ObjectHideFlags: 0

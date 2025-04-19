@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Unity.Android.Types;
+using UnityEditor.XR.Interaction.Toolkit.Locomotion.Teleportation;
 using UnityEngine;
 
 public class Game
@@ -43,7 +44,14 @@ public class Game
         Pen = 3
     }
 
+    /// <summary>
+    /// Returns the current state of the game.
+    /// </summary>
     public GameState gameState;
+
+    /// <summary>
+    /// Returns the input method for the current level.
+    /// </summary>
     public InputMethod inputMethod
     {
         get
@@ -56,10 +64,39 @@ public class Game
             return result;
         }
     }
+
+    /// <summary>
+    /// Returns the current latin square value for the game.
+    /// </summary>
+    /// <returns></returns>
+    public int CurrentLatinSquareValue()
+    {
+        int result = -1;
+        if (gameLevels != null && gameLevels.Count > 0 && currentLevelIndexInRange)
+        {
+            result = gameLevels[currentLevelIndex].latinSquareValue;
+        }
+        return result;
+    }
+
+    private bool currentLevelIndexInRange
+    {
+        get { return currentLevelIndex > -1 && currentLevelIndex < gameLevels.Count; }
+    }
+
+    /// <summary>
+    /// Returns the latin square code for the game.
+    /// </summary>
     public string latinSquareCode;
 
+    /// <summary>
+    /// Returns the list of game levels.
+    /// </summary>
     public List<GameLevel> gameLevels = new List<GameLevel>();
 
+    /// <summary>
+    /// Returns the index of the current level.
+    /// </summary>
     public int currentLevelIndex = -1;
 
     public Game()
