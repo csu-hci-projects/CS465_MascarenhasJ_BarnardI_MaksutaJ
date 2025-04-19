@@ -5,7 +5,21 @@ using UnityEngine;
 
 public class GameHUD : MonoBehaviour
 {
-    private Game game;
+    public GameReference gameReference;
+    private Game game { 
+        get {
+            Game result = null;
+            if (gameReference != null)
+            {
+                result = gameReference.theGame;
+            }
+            else
+            {
+                result = Game.Instance;
+            }
+            return result;
+        } 
+    }
 
     public GameObject HUDCanvas;
     public TMP_Text latinSquareCodeText;
@@ -27,7 +41,7 @@ public class GameHUD : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        this.game = Game.Instance;
+        //this.game = Game.Instance;
 
         theTransform = this.gameObject.GetComponent<Transform>();
         setTransformToHead();

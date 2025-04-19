@@ -41,6 +41,8 @@ public class TextWriter : MonoBehaviour
     {
         // initialize the file name when the script starts  
         string fileName = this.fileName;
+        Debug.Log("Log file name: " + fileName); // Log the file path for debugging purposes
+        Debug.Log("Log file path: " + this.filePath); // Log the file path for debugging purposes
     }
 
     // Update is called once per frame

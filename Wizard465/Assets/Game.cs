@@ -51,7 +51,7 @@ public class Game
             InputMethod result = InputMethod.None;
             if (gameState == GameState.Playing)
             {
-                result = gameLevels[currentLevelIndex].inputMethod;
+                result = gameLevels[currentLevelIndex].InputMethod;
             }
             return result;
         }
@@ -69,6 +69,19 @@ public class Game
 
         gameLevels = new List<GameLevel>();
         currentLevelIndex = -1;
+    }
+
+    public GameLevel currentLevel
+    {
+        get
+        {
+            GameLevel result = null;
+            if (currentLevelIndex >= 0 && currentLevelIndex < gameLevels.Count)
+            {
+                result = gameLevels[currentLevelIndex];
+            }
+            return result;
+        }
     }
 
     public InputMethod GetInputMethodFromLatinSquareDigit(int latinSquareDigit)

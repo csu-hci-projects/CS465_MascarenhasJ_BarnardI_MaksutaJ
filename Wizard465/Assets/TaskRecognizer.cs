@@ -1,3 +1,4 @@
+using Assets;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +10,15 @@ public class TaskRecognizer : MonoBehaviour
     public const int TASK_WATCH_TIMEOUT_SECS = 30; // Timeout in seconds for task watch, if needed to reset the watch time.
 
     public TextWriter logWriter; // Reference to the TextWriter component, if needed for logging
+    public TaskLog taskLog; // Reference to the TaskLog component, if needed for logging task data
     public VoiceRecognizer voiceRecognizer; // Reference to the VoiceRecognizer component
     public GestureRecognizer gestureRecognizer;
 
     public List<EventPairs> eventPairs = new List<EventPairs>();
 
     private DateTime watchTime = DateTime.MinValue;
+
+    private TaskData currentTask;
 
     [Serializable]
     public class EventPairs
@@ -56,7 +60,7 @@ public class TaskRecognizer : MonoBehaviour
         Debug.Log("OnTaskRecognized called with: " + recognizedText);
     }
 
-    public void OnTaskFailure(string recognizedText)
+    public void OnTaskFailure(string recognizedText, string recognizedGesture)
     {
         if (string.IsNullOrEmpty(recognizedText))
         {
@@ -93,6 +97,8 @@ public class TaskRecognizer : MonoBehaviour
         bool voiceRecognized = false;
         bool gestureRecognized = false;
 
+        DateTime currentTime = DateTime.Now;
+
         if (voiceRecognizer != null)
         {
             voiceRecognized = voiceRecognizer.IsPhraseRecognized();
@@ -100,6 +106,10 @@ public class TaskRecognizer : MonoBehaviour
         if (gestureRecognizer != null)
         {
             gestureRecognized = gestureRecognizer.IsGestureRecognized();
+        }
+        if (voiceRecognized || gestureRecognized)
+        {
+            CreateTaskDataIfNull(currentTime);
         }
         DateTime timeLimit = watchTime.Add(new TimeSpan(0, 0, TASK_WATCH_TIMEOUT_SECS));
         // Check if the voice recognizer has recognized a phrase
@@ -110,6 +120,7 @@ public class TaskRecognizer : MonoBehaviour
 
             if (recognizedPhrase.ToLower() == recognizedGesture.ToLower())
             {
+                UpdateTaskData(currentTime);
                 // Perform the task based on the recognized phrase and gesture
                 OnTaskRecognized(recognizedPhrase);
 
@@ -121,6 +132,8 @@ public class TaskRecognizer : MonoBehaviour
             }
             else
             {
+                UpdateTaskData(currentTime);
+                OnTaskFailure(recognizedPhrase, recognizedGesture);
                 RaiseOnFailure(new TaskRecognizedEventArgs(recognizedPhrase, recognizedGesture));
                 logData(string.Format("Task recognition failed. Voice: {0}, Gesture: {1}. Timeout after {2} seconds.",
                     recognizedPhrase ?? "none",
@@ -133,7 +146,8 @@ public class TaskRecognizer : MonoBehaviour
         {
             string recognizedPhrase = voiceRecognizer.GetRecognizedPhrase();
             string recognizedGesture = gestureRecognizer.GetRecognizedGesture();
-            
+
+            OnTaskFailure(recognizedPhrase, recognizedGesture);
             RaiseOnFailure(new TaskRecognizedEventArgs(recognizedPhrase, recognizedGesture));
             logData(string.Format("Task recognition failed. Voice: {0}, Gesture: {1}. Timeout after {2} seconds.",
                 recognizedPhrase ?? "none",
@@ -141,6 +155,24 @@ public class TaskRecognizer : MonoBehaviour
                 TASK_WATCH_TIMEOUT_SECS));
             cleanupAfterEvent();
         }
+    }
+
+    private void UpdateTaskData(DateTime currentTime)
+    {
+        if (this.voiceRecognizer != null)
+        {
+            this.currentTask.recognizedPhrase = this.voiceRecognizer.GetRecognizedPhrase();
+            this.currentTask.recognizedPhraseTime = this.voiceRecognizer.RecognizedTime;    
+        }
+        if (this.gestureRecognizer != null)
+        {
+            this.currentTask.recognizedGesture = this.gestureRecognizer.GetRecognizedGesture();
+        }
+    }
+
+    private void CreateTaskDataIfNull(DateTime currentTime)
+    {
+        throw new NotImplementedException();
     }
 
     private void logData(string message)
@@ -151,6 +183,25 @@ public class TaskRecognizer : MonoBehaviour
             return;
         }
         logWriter.LogData(DateTime.Now, "TaskRecognizer", message);
+    }
+
+    private void LogTask(TaskData taskData)
+    {
+        try
+        {
+            if (taskLog != null)
+            {
+                taskLog.LogTask(taskData);
+            }
+            else
+            {
+                Debug.LogWarning("taskLog is not set. Cannot log task data.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError(ex.Message, this);
+        }
     }
 
     private void cleanupAfterEvent()
