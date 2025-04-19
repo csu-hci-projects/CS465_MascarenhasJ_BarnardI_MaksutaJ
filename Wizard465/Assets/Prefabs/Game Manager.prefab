@@ -31,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1865174793813641222}
+  - {fileID: 7649745230031182349}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6526595524935585606
@@ -45,7 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00c31cd9381b4543b60548c954d1ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logger: {fileID: 0}
+  logger: {fileID: 1859553953917270914}
+  onGameOver:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6229306724281782922
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,3 +95,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameReference: {fileID: 6526595524935585606}
+--- !u!1001 &3146300195981558493
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5864052197212473706}
+    m_Modifications:
+    - target: {fileID: 3632031243699255647, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: logFileName
+      value: Wizard465_Report.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719980880486357200, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719980880486357200, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3327196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719980880486357200, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.060348224
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719980880486357200, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719980880486357200, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719980880486357200, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719980880486357200, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719980880486357200, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719980880486357200, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719980880486357200, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6558125169343929961, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+      propertyPath: m_Name
+      value: Logger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+--- !u!114 &1859553953917270914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3632031243699255647, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+  m_PrefabInstance: {fileID: 3146300195981558493}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3760d82509a3cf4c98e52d780f0d687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &7649745230031182349 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4719980880486357200, guid: 4ff8f8acb278a6c44bfaac269a858dcd, type: 3}
+  m_PrefabInstance: {fileID: 3146300195981558493}
+  m_PrefabAsset: {fileID: 0}

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Unity.Android.Types;
 using UnityEngine;
+using static TaskRecognizer;
 
 public class Game
 {
@@ -131,7 +132,19 @@ public class Game
         else
         {
             gameState = GameState.GameOver;
+            currentLevelIndex = -1;
+            RaiseOnGameOVer(EventArgs.Empty);   
+            Debug.Log("Game Over! All levels completed.");
         }
+    }
+
+    public delegate void OnGameOver(object sender, EventArgs eventArgs);
+
+    public event OnGameOver onGameOver;
+
+    protected virtual void RaiseOnGameOVer(EventArgs e)
+    {
+        onGameOver?.Invoke(this, e);
     }
 
 }

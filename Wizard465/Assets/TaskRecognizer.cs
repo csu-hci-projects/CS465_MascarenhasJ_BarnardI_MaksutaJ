@@ -1,6 +1,7 @@
 using Assets;
 using System;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
@@ -172,7 +173,11 @@ public class TaskRecognizer : MonoBehaviour
 
     private void CreateTaskDataIfNull(DateTime currentTime)
     {
-        throw new NotImplementedException();
+        if (this.currentTask == null)
+        {
+            this.currentTask = new TaskData();
+            this.currentTask.currentTime = currentTime;
+        }
     }
 
     private void logData(string message)
@@ -209,6 +214,7 @@ public class TaskRecognizer : MonoBehaviour
         this.watchTime = DateTime.MinValue; // Reset the watch time after the event is processed    
         this.voiceRecognizer.Reset();
         this.gestureRecognizer.Reset(); // Reset the gesture recognizer as well
+        this.currentTask = null; // Reset the current task data
     }
 
     internal void OnVoiceRecognized(string recognizedText)

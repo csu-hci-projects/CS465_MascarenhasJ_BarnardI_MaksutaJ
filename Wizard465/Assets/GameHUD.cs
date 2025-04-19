@@ -71,7 +71,7 @@ public class GameHUD : MonoBehaviour
         showLatinSquareCodeInputPanel();
     }
 
-    private void ShowGameOverCanvas()
+    public void ShowGameOverCanvas()
     {
         if (GameOverCanvas != null)
         {
