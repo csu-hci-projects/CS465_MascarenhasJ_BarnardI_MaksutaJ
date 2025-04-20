@@ -160,11 +160,6 @@ public class TaskCounter : MonoBehaviour
         UpdateDisplay();
     }
 
-    private float GetYPos(Vector3 currentPosition, int currentRow, RectTransform parentRect)
-    {
-        return (currentPosition.y + (currentRow * rowOffset.y) * parentRect.localScale.y) * 0.5f;
-    }
-
     private void SetGameObjectPosition(GameObject gameObject, Vector2 positionVector)
     {
         RectTransform childRect = gameObject.GetComponent<RectTransform>();
@@ -175,20 +170,6 @@ public class TaskCounter : MonoBehaviour
         else
         {
             Debug.LogError(gameObject.name + " does not have a RectTransform.");
-        }
-    }
-
-    private void PositionIconInRow(Transform iconTransform, int index, Vector3 startPosition, Quaternion startRotation, RectTransform parentRect)
-    {
-        RectTransform iconRect = iconTransform as RectTransform;
-        if (iconRect != null)
-        {
-            iconRect.anchoredPosition = new Vector2((float)(startXOffset * parentRect.localScale.x + index * iconSpacing * parentRect.localScale.x + (successLabelPrefab != null || failureLabelPrefab != null ? labelSpacing * parentRect.localScale.x : 0f)), (startPosition == uiParent.position) ? rowOffset.y * 0.5f : -rowOffset.y * 0.5f);
-        }
-        else
-        {
-            iconTransform.position = (Vector3)(startPosition + startRotation * Vector3.right * (index * iconSpacing));
-            iconTransform.rotation = startRotation;
         }
     }
 
@@ -210,19 +191,8 @@ public class TaskCounter : MonoBehaviour
             return;
         }
 
-        GameObject successLabelGO = CreateLabel("SuccessLabel", "Success:"); // Create the label for successes.   
+        GameObject successLabelGO = CreateLabel("SuccessLabel", "Success:");
         SetGameObjectPosition(successLabelGO, new Vector2((float)startXOffset, 0f));
-
-        //GameObject successLabelGO = new GameObject("SuccessLabel");
-        //successLabelGO.transform.SetParent(uiParent, false);
-        //TextMeshProUGUI successLabelTMP = successLabelGO.AddComponent<TextMeshProUGUI>();
-        //successLabelTMP.text = "Success:";
-        //successLabelTMP.font = labelFont;
-        //successLabelTMP.fontSize = labelFontSize;
-        //successLabelTMP.color = labelColor;
-        //successLabelTMP.alignment = TextAlignmentOptions.Left;
-        //RectTransform successLabelRect = successLabelGO.GetComponent<RectTransform>();
-        //successLabelRect.anchoredPosition = new Vector2((float)startXOffset, 0f); // Top row
 
         float currentX = (float)startXOffset + (float)labelSpacing;
         for (int i = 0; i < GetSuccessCount(); i++)
