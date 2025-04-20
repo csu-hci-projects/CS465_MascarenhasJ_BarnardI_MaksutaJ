@@ -56,6 +56,8 @@ GameObject:
   - component: {fileID: 7310121375833018314}
   - component: {fileID: 6885345277532014052}
   - component: {fileID: 5517271452259624288}
+  - component: {fileID: 1972118572496932040}
+  - component: {fileID: 4290454502644156121}
   m_Layer: 0
   m_Name: Activation
   m_TagString: Untagged
@@ -156,6 +158,97 @@ MonoBehaviour:
   m_MinimumHoldTime: 0.2
   m_GestureDetectionInterval: 0.1
   m_StaticGestures: []
+--- !u!114 &1972118572496932040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092681574725935094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f886f6780d528d4cbf48b0d0d343577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryButtonLeftReference: {fileID: 5113088590926889233, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  primaryButtonRightReference: {fileID: 11711766586467970, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  triggerLeftReference: {fileID: 6986180202050166755, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  triggerRightReference: {fileID: 6454596279149084813, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 874831717712985276}
+        m_TargetAssemblyTypeName: Meta.WitAi.VoiceService, Meta.WitAi
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDeactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 874831717712985276}
+        m_TargetAssemblyTypeName: Oculus.Voice.AppVoiceExperience, VoiceSDK.Runtime
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4290454502644156121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092681574725935094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c220921ead26b8a41a0da1bd1f83e123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penTipPressureReference: {fileID: 106152260777017392, guid: 1918761d077289d4bba84fc491bee96b, type: 3}
+  penButtonReference: {fileID: -3775169633974974777, guid: 1918761d077289d4bba84fc491bee96b, type: 3}
+  penPositionReference: {fileID: -3998739080497272086, guid: 1918761d077289d4bba84fc491bee96b, type: 3}
+  onActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 874831717712985276}
+        m_TargetAssemblyTypeName: Meta.WitAi.VoiceService, Meta.WitAi
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDeactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 874831717712985276}
+        m_TargetAssemblyTypeName: Oculus.Voice.AppVoiceExperience, VoiceSDK.Runtime
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2040079079564107728
 GameObject:
   m_ObjectHideFlags: 0
