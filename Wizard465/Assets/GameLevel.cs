@@ -17,6 +17,8 @@ public class GameLevel
     private DateTime _startTime;
     private DateTime _endTime;
     private int _completedTasksCount;
+    private int _successCount;
+    private int _failureCount;
 
     public int LatinSquareValue
     {
@@ -52,6 +54,22 @@ public class GameLevel
         set { _completedTasksCount = value; }
     }
 
+    public int SuccessCount
+    {
+        get { return _successCount; }
+        set
+        {
+            _successCount = value;
+            _completedTasksCount = value;
+        }
+    }
+
+    public int FailureCount
+    {
+        get { return _failureCount; }
+        set { _failureCount = value; }
+    }
+
     public TaskLog taskLog;
 
     public GameLevel()
@@ -63,6 +81,8 @@ public class GameLevel
         this.EndTime = DateTime.MinValue;
         this.taskLog = new TaskLog();
         this.CompletedTasksCount = 0;
+        this.SuccessCount = 0;
+        this.FailureCount = 0;
     }
 
     public GameLevel(int latinSquareValue, InputMethod inputMethod) : this()
@@ -89,6 +109,16 @@ public class GameLevel
     {
         int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
         UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    public void IncrementSuccessCount()
+    {
+        this.SuccessCount++;
+    }
+
+    public void IncrementFailureCount()
+    {
+        this.FailureCount++;
     }
 
     public bool isCompleted
@@ -154,7 +184,7 @@ public class GameLevel
         result += $"Duration: {LevelDuration} seconds\n";
         result += $"Task Log:\n";
         result += $"---------------------\n";
-        result += this.taskLog.ToString() + "\n";   
+        result += this.taskLog.ToString() + "\n";
         result += $"---------------------\n";
         result += $"Tasks Completed: {TasksCompleted}\n";
         result += $"Level Duration: {Math.Round(LevelDuration, 2)} seconds\n";
