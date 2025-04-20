@@ -11,7 +11,6 @@ public class TaskRecognizer : MonoBehaviour
     public const int TASK_WATCH_TIMEOUT_SECS = 30; // Timeout in seconds for task watch, if needed to reset the watch time.
 
     public TextWriter logWriter; // Reference to the TextWriter component, if needed for logging
-    public TaskLog taskLog; // Reference to the TaskLog component, if needed for logging task data
     public VoiceRecognizer voiceRecognizer; // Reference to the VoiceRecognizer component
     public GestureRecognizer gestureRecognizer;
 
@@ -213,6 +212,7 @@ public class TaskRecognizer : MonoBehaviour
     {
         try
         {
+            TaskLog taskLog = GetTaskLog(); 
             if (taskLog != null)
             {
                 taskData.isSuccess = isSuccess; 
@@ -228,6 +228,20 @@ public class TaskRecognizer : MonoBehaviour
         {
             Debug.LogError(ex.Message, this);
         }
+    }
+
+    public TaskLog GetTaskLog()
+    {
+        Game game = Game.Instance;
+        if (game.currentLevel != null)
+        {
+            return game.currentLevel.taskLog;
+        }
+        else
+        {
+            Debug.LogWarning("Current level is null. Cannot get task log.");
+            return null;
+        }   
     }
 
     private void cleanupAfterEvent()
