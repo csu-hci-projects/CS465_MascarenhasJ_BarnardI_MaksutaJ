@@ -30,7 +30,7 @@ namespace Assets
             result += $"Time:\t Phrase:\t Phrase Time:\t Gesture:\t Gesture Time:\t Task:\t Task Time:\t Success:\t Failure:\t\n";
             foreach (TaskData data in taskDataList)
             {
-                result += $"{data.currentTime}\t Phrase: {data.recognizedPhrase}\t Phrase Time: {data.recognizedPhraseTime}\t Gesture: {data.recognizedGesture}\t Gesture Time: {data.recognizedGestureTime}\t Task: {data.recognizedTask}\t Task Time: {data.recognizedTaskTime}\t Success: {data.isSuccess}\t Failure: {data.isFailure}\n";
+                result += $"{data.currentTime}\t{data.recognizedPhrase}\t{data.recognizedPhraseTime}\t{data.recognizedGesture}\t{data.recognizedGestureTime}\t{data.recognizedTask}\t{data.recognizedTaskTime}\t{data.isSuccess}\t{data.isFailure}\n";
             }
             return result;
         }
