@@ -28,7 +28,6 @@ namespace Assets
             recognizedTask = string.Empty;
             recognizedTaskTime = DateTime.MinValue;
             isSuccess = false;
-            isSuccess = false;
             isFailure = false;
         }
 

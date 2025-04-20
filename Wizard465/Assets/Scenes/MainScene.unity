@@ -1704,7 +1704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &252594510
 Transform:
   m_ObjectHideFlags: 0
@@ -6554,10 +6554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc41e765b219cb442a2c25e4e9306ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftControllerPosition: {x: 0, y: 0, z: 0}
-  rightControllerPosition: {x: 0, y: 0, z: 0}
-  leftHandCharacteristics: 320
-  rightHandCharacteristics: 576
 --- !u!1001 &879590758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9000,6 +8996,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 319072021}
+    - target: {fileID: 4538390580565090629, guid: cae58e1a743635f4f8207c35cf09b14e, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4825517194191831879, guid: cae58e1a743635f4f8207c35cf09b14e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

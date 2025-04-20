@@ -11,7 +11,6 @@ public class TaskRecognizer : MonoBehaviour
     public const int TASK_WATCH_TIMEOUT_SECS = 30; // Timeout in seconds for task watch, if needed to reset the watch time.
 
     public TextWriter logWriter; // Reference to the TextWriter component, if needed for logging
-    public TaskLog taskLog; // Reference to the TaskLog component, if needed for logging task data
     public VoiceRecognizer voiceRecognizer; // Reference to the VoiceRecognizer component
     public GestureRecognizer gestureRecognizer;
 
@@ -38,6 +37,11 @@ public class TaskRecognizer : MonoBehaviour
 
     public void OnTaskRecognized(string recognizedText)
     {
+        Game theGame = Game.Instance;
+        if (theGame.currentLevel != null)
+        {
+            theGame.currentLevel.IncrementSuccessCount();
+        }
         if (string.IsNullOrEmpty(recognizedText))
         {
             Debug.LogWarning("No recognized text provided.");
@@ -63,6 +67,11 @@ public class TaskRecognizer : MonoBehaviour
 
     public void OnTaskFailure(string recognizedText, string recognizedGesture)
     {
+        Game theGame = Game.Instance;
+        if (theGame.currentLevel != null)
+        {
+            theGame.currentLevel.IncrementFailureCount();
+        }
         if (string.IsNullOrEmpty(recognizedText))
         {
             Debug.LogWarning("No recognized text provided.");
@@ -113,15 +122,19 @@ public class TaskRecognizer : MonoBehaviour
             CreateTaskDataIfNull(currentTime);
         }
         DateTime timeLimit = watchTime.Add(new TimeSpan(0, 0, TASK_WATCH_TIMEOUT_SECS));
+
+        bool watchTimeNotMin = (watchTime != DateTime.MinValue);
+        bool timeoutExpired = (watchTimeNotMin && DateTime.Now > timeLimit);
         // Check if the voice recognizer has recognized a phrase
         if (voiceRecognized && gestureRecognized)
         {
             string recognizedPhrase = voiceRecognizer.GetRecognizedPhrase();
             string recognizedGesture = gestureRecognizer.GetRecognizedGesture();
-
-            if (recognizedPhrase.ToLower() == recognizedGesture.ToLower())
+            bool bothNotEmpty = (!string.IsNullOrEmpty(recognizedPhrase) && !string.IsNullOrEmpty(recognizedGesture));
+            if (bothNotEmpty && recognizedPhrase.ToLower() == recognizedGesture.ToLower())
             {
                 UpdateTaskData(currentTime);
+                LogTask(this.currentTask, true); // Log the task data
                 // Perform the task based on the recognized phrase and gesture
                 OnTaskRecognized(recognizedPhrase);
 
@@ -129,11 +142,13 @@ public class TaskRecognizer : MonoBehaviour
                 TimeSpan elapsedTimeSeconds = DateTime.Now - watchTime;
 
                 logData(string.Format("Task recognized successfully with: {0}. elapsed time (s): {1}", recognizedPhrase, elapsedTimeSeconds));
+
                 cleanupAfterEvent();
             }
-            else
+            else if (bothNotEmpty)
             {
                 UpdateTaskData(currentTime);
+                LogTask(this.currentTask, false); // Log the task data
                 OnTaskFailure(recognizedPhrase, recognizedGesture);
                 RaiseOnFailure(new TaskRecognizedEventArgs(recognizedPhrase, recognizedGesture));
                 logData(string.Format("Task recognition failed. Voice: {0}, Gesture: {1}. Timeout after {2} seconds.",
@@ -143,11 +158,13 @@ public class TaskRecognizer : MonoBehaviour
                 cleanupAfterEvent();
             }
         }
-        else if ((voiceRecognized || gestureRecognized) && DateTime.Now > timeLimit)
+        else if ((voiceRecognized || gestureRecognized) && timeoutExpired)
         {
             string recognizedPhrase = voiceRecognizer.GetRecognizedPhrase();
             string recognizedGesture = gestureRecognizer.GetRecognizedGesture();
 
+            UpdateTaskData(currentTime);
+            LogTask(this.currentTask, false); // Log the task data
             OnTaskFailure(recognizedPhrase, recognizedGesture);
             RaiseOnFailure(new TaskRecognizedEventArgs(recognizedPhrase, recognizedGesture));
             logData(string.Format("Task recognition failed. Voice: {0}, Gesture: {1}. Timeout after {2} seconds.",
@@ -163,11 +180,12 @@ public class TaskRecognizer : MonoBehaviour
         if (this.voiceRecognizer != null)
         {
             this.currentTask.recognizedPhrase = this.voiceRecognizer.GetRecognizedPhrase();
-            this.currentTask.recognizedPhraseTime = this.voiceRecognizer.RecognizedTime;    
+            this.currentTask.recognizedPhraseTime = this.voiceRecognizer.RecognizedTime;
         }
         if (this.gestureRecognizer != null)
         {
             this.currentTask.recognizedGesture = this.gestureRecognizer.GetRecognizedGesture();
+            this.currentTask.recognizedGestureTime = this.gestureRecognizer.RecognizedTime;
         }
     }
 
@@ -190,12 +208,15 @@ public class TaskRecognizer : MonoBehaviour
         logWriter.LogData(DateTime.Now, "TaskRecognizer", message);
     }
 
-    private void LogTask(TaskData taskData)
+    private void LogTask(TaskData taskData, bool isSuccess)
     {
         try
         {
+            TaskLog taskLog = GetTaskLog(); 
             if (taskLog != null)
             {
+                taskData.isSuccess = isSuccess; 
+                taskData.isFailure = !isSuccess;
                 taskLog.LogTask(taskData);
             }
             else
@@ -207,6 +228,20 @@ public class TaskRecognizer : MonoBehaviour
         {
             Debug.LogError(ex.Message, this);
         }
+    }
+
+    public TaskLog GetTaskLog()
+    {
+        Game game = Game.Instance;
+        if (game.currentLevel != null)
+        {
+            return game.currentLevel.taskLog;
+        }
+        else
+        {
+            Debug.LogWarning("Current level is null. Cannot get task log.");
+            return null;
+        }   
     }
 
     private void cleanupAfterEvent()
