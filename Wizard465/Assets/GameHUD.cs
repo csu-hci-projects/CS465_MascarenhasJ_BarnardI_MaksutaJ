@@ -1,5 +1,3 @@
-using Oculus.Voice.Windows;
-using System;
 using TMPro;
 using UnityEngine;
 

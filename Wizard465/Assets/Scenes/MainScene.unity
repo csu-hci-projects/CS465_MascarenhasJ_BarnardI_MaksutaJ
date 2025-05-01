@@ -5162,6 +5162,86 @@ PrefabInstance:
       propertyPath: debugTextDisplay
       value: 
       objectReference: {fileID: 877756667}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: leftControllerPositionActionProperty.m_Action.m_Name
+      value: Left Controller Position Action Property
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: leftControllerRotationActionProperty.m_Action.m_Name
+      value: Left Controller Rotation Action Property
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: rightControllerPositionActionProperty.m_Action.m_Name
+      value: Right Controller Position Action Property
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: rightControllerRotationActionProperty.m_Action.m_Name
+      value: Right Controller Rotation Action Property
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: leftControllerPositionActionProperty.m_Action.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: leftControllerRotationActionProperty.m_Action.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: rightControllerPositionActionProperty.m_Action.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: rightControllerRotationActionProperty.m_Action.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: leftControllerPositionActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
+      value: b31c4512-3ec9-4152-af83-432a391e4c17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: leftControllerRotationActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 7b9508bf-9dbe-475c-bd9b-179f9ea11f82
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: rightControllerPositionActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 21baa3bc-a48d-4dab-a24b-9bea06a7191e
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: rightControllerRotationActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 858389cf-8ec6-4d26-a061-f4e73874fdfe
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: leftControllerPositionActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRController>{LeftHand}/devicePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: leftControllerRotationActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRController>{LeftHand}/deviceRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: rightControllerPositionActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRController>{RightHand}/devicePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: rightControllerRotationActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRController>/deviceRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: leftControllerPositionActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Left Controller Position Action Property
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: leftControllerRotationActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Left Controller Rotation Action Property
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: rightControllerPositionActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Right Controller Position Action Property
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652094279720342592, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
+      propertyPath: rightControllerRotationActionProperty.m_Action.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Right Controller Rotation Action Property
+      objectReference: {fileID: 0}
     - target: {fileID: 4836106659229532523, guid: 1730b4323e748844a84f7cea9dff8e05, type: 3}
       propertyPath: mainCamera
       value: 
