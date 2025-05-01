@@ -1,11 +1,5 @@
-using Assets;
-using Meta.WitAi.CallbackHandlers;
 using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Windows.Speech;
 
 public class VoiceRecognizer : MonoBehaviour
 {
