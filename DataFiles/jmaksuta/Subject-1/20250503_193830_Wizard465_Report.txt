@@ -1,0 +1,31 @@
+---------------------
+Level End:
+---------------------
+Level State: Finished
+Latin Square Value: 1
+Input Method: Controller
+Start Time: 5/3/2025 7:38:29 PM
+End Time: 5/3/2025 7:39:27 PM
+Completed Tasks Count: 5
+Duration: 57.072704 seconds
+Task Log:
+---------------------
+TaskLog: 5/3/2025 7:39:27 PM
+Time:	 Phrase:	 Phrase Time:	 Gesture:	 Gesture Time:	 Task:	 Task Time:	 Success:	 Failure:	
+5/3/2025 7:38:30 PM	fireball	5/3/2025 7:38:44 PM	Fireball	5/3/2025 7:38:44 PM		1/1/0001 12:00:00 AM	True	False
+5/3/2025 7:38:44 PM	fireball	5/3/2025 7:38:48 PM	Fireball	5/3/2025 7:38:48 PM		1/1/0001 12:00:00 AM	True	False
+5/3/2025 7:38:48 PM	charm	5/3/2025 7:38:55 PM	Fireball	5/3/2025 7:38:55 PM		1/1/0001 12:00:00 AM	False	True
+5/3/2025 7:38:55 PM	fireball	5/3/2025 7:39:00 PM	Fireball	5/3/2025 7:39:00 PM		1/1/0001 12:00:00 AM	True	False
+5/3/2025 7:39:00 PM	fireball	5/3/2025 7:39:19 PM	Fireball	5/3/2025 7:39:19 PM		1/1/0001 12:00:00 AM	True	False
+5/3/2025 7:39:19 PM	fireball	5/3/2025 7:39:26 PM	Fireball	5/3/2025 7:39:26 PM		1/1/0001 12:00:00 AM	True	False
+
+---------------------
+Tasks Completed: 1
+Level Duration: 57.07 seconds
+Level Max Time: 600 seconds
+Level Completed: True
+Level Time Exceeded: False
+Level Success: True
+Level Failed: False
+---------------------
+

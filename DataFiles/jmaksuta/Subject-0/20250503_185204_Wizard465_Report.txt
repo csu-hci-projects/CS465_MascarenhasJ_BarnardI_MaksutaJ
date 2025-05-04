@@ -1,0 +1,30 @@
+---------------------
+Level End:
+---------------------
+Level State: Finished
+Latin Square Value: 2
+Input Method: Hands
+Start Time: 5/3/2025 6:52:04 PM
+End Time: 5/3/2025 6:53:14 PM
+Completed Tasks Count: 5
+Duration: 69.35092 seconds
+Task Log:
+---------------------
+TaskLog: 5/3/2025 6:53:14 PM
+Time:	 Phrase:	 Phrase Time:	 Gesture:	 Gesture Time:	 Task:	 Task Time:	 Success:	 Failure:	
+5/3/2025 6:52:04 PM	fireball	5/3/2025 6:53:00 PM	Fireball	5/3/2025 6:53:00 PM		1/1/0001 12:00:00 AM	True	False
+5/3/2025 6:53:00 PM	fireball	5/3/2025 6:53:04 PM	Fireball	5/3/2025 6:53:04 PM		1/1/0001 12:00:00 AM	True	False
+5/3/2025 6:53:04 PM	fireball	5/3/2025 6:53:07 PM	Fireball	5/3/2025 6:53:07 PM		1/1/0001 12:00:00 AM	True	False
+5/3/2025 6:53:07 PM	fireball	5/3/2025 6:53:10 PM	Fireball	5/3/2025 6:53:10 PM		1/1/0001 12:00:00 AM	True	False
+5/3/2025 6:53:11 PM	fireball	5/3/2025 6:53:13 PM	Fireball	5/3/2025 6:53:13 PM		1/1/0001 12:00:00 AM	True	False
+
+---------------------
+Tasks Completed: 1
+Level Duration: 69.35 seconds
+Level Max Time: 600 seconds
+Level Completed: True
+Level Time Exceeded: False
+Level Success: True
+Level Failed: False
+---------------------
+
