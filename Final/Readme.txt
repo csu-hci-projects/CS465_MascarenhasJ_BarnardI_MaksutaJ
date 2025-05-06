@@ -7,6 +7,9 @@ https://www.overleaf.com/4948194659qdxxbsmvtwqr#4506df
 View link
 https://www.overleaf.com/read/sdvgbdjcfnmc#1a55c0
 
+Latex Source:
+https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/blob/main/Final/Latex%20Source/CS465-801%20Final.zip
+
 Directory for Source Code (if it fits. If it doesn't fit, create a text file with the link to github)
 Videos (What do you need?)
 Github Repo
