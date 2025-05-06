@@ -12,7 +12,7 @@ Short video (3-5 Minutes):
 Presentation Video (You pick the length). As long as you can explain your project. No more than 30 minutes. Ideally 12 minutes.
 
 Programming Video. Explain the code.
-  https://youtu.be/Zv4SYpK1JHA
+  https://youtu.be/YLV37HN3Hxo
   We used github Issues for task tracking so you can see the history of who worked on what there.
   - Jaden did the Controller and 3d environment, town, wand, training dummy assets
   - Isabella did the Pen and other tasks in Github (see Github Issues)
