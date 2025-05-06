@@ -7,13 +7,11 @@ Videos (What do you need?)
 Github Repo
   https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ.git
 
-Short video (no more than 5 minutes, ideally 3) high-level overview project. Make it really cool. This is design for someone to learn about your project, like the one we sow from one of the papers in class. 
+Short video (3-5 Minutes):
 
-Presentation Video (You pick the lenght). As long as you can explain your project. No more than 30 minutes. Ideally 12 minutes.
+Presentation Video (You pick the length). As long as you can explain your project. No more than 30 minutes. Ideally 12 minutes.
 
-Programming Video. Explain the code. In the programming video, you must explain who coded what but towards the end, also give me a breakdown (maybe a few slides) of who did what in the group (for example, paper, videos, etc.) 
-
-Code Video
+Programming Video. Explain the code.
   https://youtu.be/Zv4SYpK1JHA
   We used github Issues for task tracking so you can see the history of who worked on what there.
   - Jaden did the Controller and 3d environment, town, wand, training dummy assets
