@@ -33,6 +33,8 @@ Programming Video Supplemental (Explaining who did what):
   https://youtu.be/BWYPhV9KynQ
 Programming Video Supplemental Direct Download:
   https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/blob/ffcbcc21f4e7253d137b06478e5b9184a9e3d66f/Final/CS465_MascarenhasJ_BarnardI_MaksutaJ_ProgrammingVideo_Supplemental.mp4
+Programming Video Supplemental Powerpoint:
+  https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/blob/bc462992ac5a488a2cac8c612410a0cb1e972817/Final/CS465_MascarenhasJ_BarnardI_MaksutaJ-ProgrammingVideo-Supplemental.pptx
 
 Notes:
   We used github Issues for task tracking so you can see the history of who worked on what there.
