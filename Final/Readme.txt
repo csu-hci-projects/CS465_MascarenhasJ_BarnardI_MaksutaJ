@@ -17,6 +17,7 @@ Github Repo:
 
 Videos (What do you need?)
 Short video (3-5 Minutes):
+https://youtu.be/KHl5y9I9xpk
 
 Presentation Video (You pick the length). As long as you can explain your project. No more than 30 minutes. Ideally 12 minutes.
 
