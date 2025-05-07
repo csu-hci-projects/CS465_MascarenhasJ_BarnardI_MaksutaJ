@@ -44,6 +44,9 @@ Readme File
 Directory for "PDFs-LiteratureSurvey" you found (exclude books, websites, etc.). 
 https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/tree/main/Final/PDFs-LiteratureSurvey
 
+Raw Data (includes data files from logs of the software to surveys, and summaries):
+  https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/tree/796699ef3cb37572a9a9b7ad08c40caad759411e/DataFiles
+
 Readme file (including links to videos, github, etc.)
 
 Instructions on how to use your app:
