@@ -24,7 +24,11 @@ https://youtu.be/KHl5y9I9xpk
 Short video Download Link (3-5 minutes):
 https://colostate-my.sharepoint.com/:v:/g/personal/isabelba_colostate_edu/Ebn95bXYp9NBmfTp3-KcgqoBpqLvUL4Zm3fXDKew7fD1Nw
 
-Presentation Video (You pick the length). As long as you can explain your project. No more than 30 minutes. Ideally 12 minutes.
+Presentation Video (You pick the length). As long as you can explain your project. No more than 30 minutes. Ideally 12 minutes:
+https://youtu.be/79gAlzMyMKE
+
+Presentation Video Download Link:
+https://colostate-my.sharepoint.com/:v:/g/personal/isabelba_colostate_edu/EZEDZNIqbcNGqlYy-romLK4BPe4LZgZAXZ9vFTGMzb26Bg
 
 Programming Video (Explaining the code):
   https://youtu.be/YLV37HN3Hxo
