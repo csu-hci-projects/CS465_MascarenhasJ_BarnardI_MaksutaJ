@@ -42,6 +42,8 @@ Readme File
   https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/edit/main/Final/Readme.txt
 
 Directory for "PDFs-LiteratureSurvey" you found (exclude books, websites, etc.). 
+https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/tree/main/Final/PDFs-LiteratureSurvey
+
 Readme file (including links to videos, github, etc.)
 
 Instructions on how to use your app:
