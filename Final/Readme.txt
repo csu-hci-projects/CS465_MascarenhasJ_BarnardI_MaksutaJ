@@ -4,13 +4,11 @@ PDF Report:
 https://github.com/csu-hci- 
   projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/blob/cb902bac9d2edbccea82404a26d25ee4f98d8d5b/Final/CS465_801_Final.pdf
 
-Directory for "Latex Source" (and include all the latex source there). You can download them from Overleaf. Feel free to ask the TAs if needed. 
-Latex Report
+Latex Report:
 Edit link
 https://www.overleaf.com/4948194659qdxxbsmvtwqr#4506df
-View link
+View link:
 https://www.overleaf.com/read/sdvgbdjcfnmc#1a55c0
-
 Latex Source:
 https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/blob/main/Final/Latex%20Source/CS465-801%20Final.zip
 
@@ -19,7 +17,7 @@ Directory for Source Code:
 Github Repo:
   https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ.git
 
-Videos (What do you need?)
+Videos:
 Short video (3-5 Minutes):
 https://youtu.be/KHl5y9I9xpk
 
