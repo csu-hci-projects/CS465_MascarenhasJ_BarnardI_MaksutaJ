@@ -31,6 +31,8 @@ https://colostate-my.sharepoint.com/:v:/g/personal/jmaksuta_colostate_edu/Eds4g5
 
 Programming Video Supplemental (Explaining who did what):
   https://youtu.be/BWYPhV9KynQ
+Programming Video Supplemental Direct Download:
+  https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/blob/ffcbcc21f4e7253d137b06478e5b9184a9e3d66f/Final/CS465_MascarenhasJ_BarnardI_MaksutaJ_ProgrammingVideo_Supplemental.mp4
 
 Notes:
   We used github Issues for task tracking so you can see the history of who worked on what there.
