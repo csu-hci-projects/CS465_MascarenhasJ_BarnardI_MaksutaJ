@@ -17,6 +17,7 @@ Github Repo:
 
 Videos (What do you need?)
 Short video (3-5 Minutes):
+https://youtu.be/KHl5y9I9xpk
 
 Presentation Video (You pick the length). As long as you can explain your project. No more than 30 minutes. Ideally 12 minutes.
 
@@ -43,6 +44,9 @@ Readme File
 
 Directory for "PDFs-LiteratureSurvey" you found (exclude books, websites, etc.). 
 https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/tree/main/Final/PDFs-LiteratureSurvey
+
+Raw Data (includes data files from logs of the software to surveys, and summaries):
+  https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/tree/796699ef3cb37572a9a9b7ad08c40caad759411e/DataFiles
 
 Readme file (including links to videos, github, etc.)
 
