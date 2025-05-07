@@ -11,10 +11,10 @@ Latex Source:
 https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/blob/main/Final/Latex%20Source/CS465-801%20Final.zip
 
 Directory for Source Code (if it fits. If it doesn't fit, create a text file with the link to github)
-Videos (What do you need?)
 Github Repo
   https://github.com/csu-hci-projects/CS465_MascarenhasJ_BarnardI_MaksutaJ.git
 
+Videos (What do you need?)
 Short video (3-5 Minutes):
 
 Presentation Video (You pick the length). As long as you can explain your project. No more than 30 minutes. Ideally 12 minutes.
