@@ -55,3 +55,45 @@ Raw Data (includes data files from logs of the software to surveys, and summarie
 Readme file (including links to videos, github, etc.)
 
 Instructions on how to use your app:
+
+Obtain or create a Latin Square code:
+1 is Controllers
+2 is Hands
+3 is Pen
+
+each digit is a corresponding level from left to right.
+A game where you do Controllers, Hands, Pen has a latin square code 123.
+Likewise, Pen, Hands, Controllers has a code 321.
+if you are just doing controllers and hands, the code is 12.
+if you are doing hands then controllers it is 21.
+if only doing controllers the code is 1.
+
+When the each level starts, you have to complete 5 successful spell castings, or time expires at 10 minutes.
+
+After the tasks are completed or time expires, the next level will proceed.
+
+
+There are 3 spells, each has a voice component, and a gesture component. you must activate the voice before speaking and release activation when finished speaking. Activation is performed using the left controller, left hand, or the pen.
+
+The gestures need not be perfect and can be performed with a constant motion also, moving back and forth through the traced symbol. For instance to do a fireball, one can continuously sweep their right hand from bottom left to top right and from top right to bottom left.
+
+To activate speech:
+Controller:
+	Press the X button.
+Hands:
+	Make Shaka gesture (surfer gesture. The thumb and pinky fingers extended. The index, middle and ring fingers curled.)
+Pen:
+	Press other button on grip furthest from tip.
+
+Spells:
+Spell:	Fireball
+Voice Component: "Cast Fireball" or "Fireball"
+Gesture: a slash from bottom left to top right.
+
+Spell: Charm
+Voice Component: "Cast Charm" or "Charm"
+Gesture:  a back slash from top left to bottom right.
+
+Spell: Smoke
+Voice Component: "Cast Smoke" or "Smoke"
+Gesture: a circle.
