@@ -1,5 +1,9 @@
 Final
 
+PDF Report:
+https://github.com/csu-hci- 
+  projects/CS465_MascarenhasJ_BarnardI_MaksutaJ/blob/cb902bac9d2edbccea82404a26d25ee4f98d8d5b/Final/CS465_801_Final.pdf
+
 Directory for "Latex Source" (and include all the latex source there). You can download them from Overleaf. Feel free to ask the TAs if needed. 
 Latex Report
 Edit link
